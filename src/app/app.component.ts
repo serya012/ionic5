@@ -1,17 +1,21 @@
 import { Component } from '@angular/core';
+import { home, person, settings } from 'ionicons/icons';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  home = home;
+  person = person;
+  settings = settings;
   public appPages = [
-    { title: 'Inbox', url: '/folder/inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/spam', icon: 'warning' },
+    { title: 'Novo Evento', url: '/folder/novo-evento', icon: 'calendar' },
+    { title: 'Orçamento', url: '/folder/orcamento', icon: 'cash' },
+    { title: 'Feedback', url: '/folder/feedback', icon: 'clipboard' },
+    { title: 'Convidados', url: '/folder/convidados', icon: 'people' },
+    { title: 'Perfil', url: '/folder/perfil', icon: 'person' },
+    { title: 'Configuração', url: '/folder/configuracao', icon: 'settings' },
   ];
   constructor() {}
 }
