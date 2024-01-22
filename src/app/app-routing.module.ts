@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: 'orcamento',
     loadChildren: () => import('./pagina/orcamento/orcamento.module').then( m => m.OrcamentoPageModule)
+  },
+  {
+    path: 'feedback',
+    loadChildren: () => import('./pagina/feedback/feedback.module').then( m => m.FeedbackPageModule)
   }
 
 ];
