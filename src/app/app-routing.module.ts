@@ -25,6 +25,10 @@ const routes: Routes = [
   {
     path: 'feedback',
     loadChildren: () => import('./pagina/feedback/feedback.module').then( m => m.FeedbackPageModule)
+  },
+  {
+    path: 'convidado',
+    loadChildren: () => import('./pagina/convidado/convidado.module').then( m => m.ConvidadoPageModule)
   }
 
 ];
