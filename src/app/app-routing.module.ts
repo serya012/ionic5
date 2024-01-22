@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'evento',
     loadChildren: () => import('./pagina/evento/evento.module').then( m => m.EventoPageModule)
+  },
+  {
+    path: 'orcamento',
+    loadChildren: () => import('./pagina/orcamento/orcamento.module').then( m => m.OrcamentoPageModule)
   }
 
 ];
