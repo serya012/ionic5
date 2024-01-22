@@ -10,8 +10,8 @@ export class AppComponent {
   person = person;
   settings = settings;
   public appPages = [
-    { title: 'Novo Evento', url: '/folder/novo-evento', icon: 'calendar' },
-    { title: 'Orçamento', url: '/folder/orcamento', icon: 'cash' },
+    { title: 'Eventos', url: '/folder/Eventos', icon: 'calendar' },
+    { title: 'Orçamento', url: '/folder/orcamento', icon: 'wallet' },
     { title: 'Feedback', url: '/folder/feedback', icon: 'clipboard' },
     { title: 'Convidados', url: '/folder/convidados', icon: 'people' },
     { title: 'Perfil', url: '/folder/perfil', icon: 'person' },
