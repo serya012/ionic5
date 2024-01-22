@@ -29,6 +29,10 @@ const routes: Routes = [
   {
     path: 'convidado',
     loadChildren: () => import('./pagina/convidado/convidado.module').then( m => m.ConvidadoPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./pagina/perfil/perfil.module').then( m => m.PerfilPageModule)
   }
 
 ];
