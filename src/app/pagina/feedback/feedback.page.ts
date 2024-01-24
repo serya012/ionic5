@@ -1,6 +1,6 @@
 // feedback.page.ts
 import { Component } from '@angular/core';
-import { ToastController, AlertController } from '@ionic/angular';
+import { ToastController, AlertController, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-feedback',
@@ -16,7 +16,8 @@ export class FeedbackPage {
 
   constructor(
     private toastController: ToastController,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private loadingController: LoadingController
   ) {}
 
   setRating(event: any): void {
@@ -25,63 +26,78 @@ export class FeedbackPage {
   }
 
   async confirmarEnvio(): Promise<void> {
+    const loading = await this.mostrarLoading('Enviando feedback...', 4000);
+
+    try {
+      await this.enviarFeedback();
+    } finally {
+      await loading.dismiss();
+    }
+  }
+
+  async enviarFeedback(): Promise<void> {
+    if (this.avaliacao <= 0) {
+      await this.exibirAlerta('Avaliação Inválida', 'Por favor, escolha uma avaliação de 1 a 5 estrelas.');
+      return;
+    }
+
+    const loading = await this.mostrarLoading('Enviando formulário...', 4000);
+
+    try {
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      console.log('Nome:', this.seuNome);
+      console.log('Avaliação:', this.avaliacao);
+      console.log('Feedback:', this.feedback);
+
+      this.limparFormulario();
+
+      await this.exibirToast('Formulário enviado com sucesso!', 'success');
+
+      this.formularioEnviado = true;
+
+      setTimeout(() => {
+        this.formularioEnviado = false;
+      }, 3000);
+    } finally {
+      await loading.dismiss();
+    }
+  }
+
+  async mostrarLoading(message: string, duration: number): Promise<HTMLIonLoadingElement> {
+    const loading = await this.loadingController.create({
+      message,
+      duration,
+    });
+
+    await loading.present();
+    return loading;
+  }
+
+  async exibirAlerta(header: string, message: string): Promise<void> {
     const alert = await this.alertController.create({
-      header: 'Confirmação',
-      message: 'Tem certeza de que deseja enviar o formulário?',
-      buttons: [
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-        },
-        {
-          text: 'Enviar',
-          handler: () => this.enviarFeedback(),
-        },
-      ],
+      header,
+      message,
+      buttons: ['OK'],
     });
 
     await alert.present();
   }
 
-  async enviarFeedback(): Promise<void> {
-    // Verifica se a avaliação é maior que 0
-    if (this.avaliacao <= 0) {
-      const alert = await this.alertController.create({
-        header: 'Avaliação Inválida',
-        message: 'Por favor, escolha uma avaliação de 1 a 5 estrelas.',
-        buttons: ['OK'],
-      });
+  async exibirToast(message: string, color: string): Promise<void> {
+    const toast = await this.toastController.create({
+      message,
+      duration: 3000,
+      position: 'top',
+      color,
+    });
 
-      await alert.present();
-      return; // Não prossegue com o envio do formulário
-    }
+    await toast.present();
+  }
 
-    // Lógica para enviar o feedback e avaliação
-    console.log('Nome:', this.seuNome);
-    console.log('Avaliação:', this.avaliacao);
-    console.log('Feedback:', this.feedback);
-
-    // Limpar o formulário após o envio
+  limparFormulario(): void {
     this.seuNome = '';
     this.avaliacao = 0;
     this.feedback = '';
-
-    // Exibir mensagem de sucesso como notificação (Toast)
-    const toast = await this.toastController.create({
-      message: 'Formulário enviado com sucesso!',
-      duration: 3000, // 3000 milissegundos = 3 segundos
-      position: 'top',
-      color: 'success', // Cor da notificação
-    });
-
-    toast.present();
-
-    // Atualizar a propriedade para mostrar a mensagem no template
-    this.formularioEnviado = true;
-
-    // Aguarde alguns segundos e, em seguida, limpe a mensagem
-    setTimeout(() => {
-      this.formularioEnviado = false;
-    }, 3000);
   }
 }
