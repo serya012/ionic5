@@ -1,9 +1,7 @@
-// configuracao-routing.module.ts
-
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ConfiguracaoPage } from './configuracao.page';
+import { ConfiguracaoPage } from './pagina/configuracao.page';  // Corrija o caminho do import
 
 const routes: Routes = [
   {
@@ -17,3 +15,4 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class ConfiguracaoPageRoutingModule {}
+ 

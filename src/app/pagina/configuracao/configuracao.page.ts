@@ -1,18 +1,15 @@
-// src/app/paginas/configuracao/configuracao.page.ts
-
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-configuracao',
-  templateUrl: './configuracao.page.html',
-  styleUrls: ['./configuracao.page.scss'],
+  templateUrl: 'configuracao.page.html',
+  styleUrls: ['configuracao.page.css'],
 })
 export class ConfiguracaoPage {
-  eventName: string = '';
-  celebrationDate: string = '';
+  constructor() {}
 
-  clearData() {
-    this.eventName = '';
-    this.celebrationDate = '';
+  excluirTudo() {
+    // Lógica para excluir tudo
+    console.log('Excluir tudo!');
   }
 }
