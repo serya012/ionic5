@@ -1,4 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 import { ConfiguracaoPage } from './configuracao.page';
 
 describe('ConfiguracaoPage', () => {
@@ -6,9 +7,14 @@ describe('ConfiguracaoPage', () => {
   let fixture: ComponentFixture<ConfiguracaoPage>;
 
   beforeEach(async(() => {
-    fixture = TestBed.createComponent(ConfiguracaoPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    TestBed.configureTestingModule({
+      declarations: [ConfiguracaoPage],
+      imports: [IonicModule.forRoot()]
+    }).compileComponents().then(() => {
+      fixture = TestBed.createComponent(ConfiguracaoPage);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    });
   }));
 
   it('should create', () => {
