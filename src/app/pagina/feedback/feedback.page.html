@@ -1,13 +1,24 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>feedback</ion-title>
+    <ion-title>Feedback</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">feedback</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Comentários</ion-label>
+      <ion-textarea></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Classificação</ion-label>
+      <ion-select>
+        <ion-select-option value="um"><ion-icon name="star"></ion-icon></ion-select-option>
+        <ion-select-option value="dois"><ion-icon name="star"></ion-icon></ion-select-option>
+        <ion-select-option value="tres"><ion-icon name="star"></ion-icon></ion-select-option>
+        <ion-select-option value="quatro"><ion-icon name="star"></ion-icon></ion-select-option>
+        <ion-select-option value="cinco"><ion-icon name="star"></ion-icon></ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
 </ion-content>
