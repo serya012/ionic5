@@ -26,36 +26,48 @@ export class FeedbackPage {
   }
 
   async confirmarEnvio(): Promise<void> {
+    if (!this.seuNome.trim()) {
+      this.exibirAlerta('Campo Obrigatório', 'Por favor, preencha o nome antes de enviar o formulário.');
+      return;
+    }
+  
     const loading = await this.mostrarLoading('Enviando feedback...', 4000);
-
+  
     try {
       await this.enviarFeedback();
     } finally {
       await loading.dismiss();
     }
   }
+  
 
   async enviarFeedback(): Promise<void> {
+    // Verifica se o nome está vazio
+    if (!this.seuNome.trim()) {
+      this.exibirAlerta('Campo Obrigatório', 'Por favor, preencha o nome antes de enviar o formulário.');
+      return;
+    }
+  
     if (this.avaliacao <= 0) {
       await this.exibirAlerta('Avaliação Inválida', 'Por favor, escolha uma avaliação de 1 a 5 estrelas.');
       return;
     }
-
+  
     const loading = await this.mostrarLoading('Enviando formulário...', 4000);
-
+  
     try {
       await new Promise(resolve => setTimeout(resolve, 2000));
-
+  
       console.log('Nome:', this.seuNome);
       console.log('Avaliação:', this.avaliacao);
       console.log('Feedback:', this.feedback);
-
+  
       this.limparFormulario();
-
+  
       await this.exibirToast('Formulário enviado com sucesso!', 'success');
-
+  
       this.formularioEnviado = true;
-
+  
       setTimeout(() => {
         this.formularioEnviado = false;
       }, 3000);
@@ -63,6 +75,7 @@ export class FeedbackPage {
       await loading.dismiss();
     }
   }
+  
 
   async mostrarLoading(message: string, duration: number): Promise<HTMLIonLoadingElement> {
     const loading = await this.loadingController.create({
