@@ -25,6 +25,8 @@ export class FeedbackPage {
     this.avaliacao = selectedValue ? +selectedValue : 0;
   }
 
+//bloco 1
+
   async confirmarEnvio(): Promise<void> {
     if (!this.seuNome.trim()) {
       this.exibirAlerta('Campo Obrigatório', 'Por favor, preencha o nome antes de enviar o formulário.');
@@ -40,6 +42,7 @@ export class FeedbackPage {
     }
   }
   
+//bloco 2
 
   async enviarFeedback(): Promise<void> {
     // Verifica se o nome está vazio
@@ -76,6 +79,7 @@ export class FeedbackPage {
     }
   }
   
+//bloco 3
 
   async mostrarLoading(message: string, duration: number): Promise<HTMLIonLoadingElement> {
     const loading = await this.loadingController.create({
@@ -87,6 +91,8 @@ export class FeedbackPage {
     return loading;
   }
 
+//bloco 4
+
   async exibirAlerta(header: string, message: string): Promise<void> {
     const alert = await this.alertController.create({
       header,
@@ -96,6 +102,8 @@ export class FeedbackPage {
 
     await alert.present();
   }
+
+//bloco 5
 
   async exibirToast(message: string, color: string): Promise<void> {
     const toast = await this.toastController.create({
