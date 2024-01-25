@@ -34,7 +34,15 @@ const routes: Routes = [
   {
     path: 'welcome',
     loadChildren: () => import('./pagina/welcome/welcome.module').then( m => m.WelcomePageModule)
+  },  {
+    path: 'login',
+    loadChildren: () => import('./conta/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'cadastro',
+    loadChildren: () => import('./conta/cadastro/cadastro.module').then( m => m.CadastroPageModule)
   }
+
 ];
 
 
