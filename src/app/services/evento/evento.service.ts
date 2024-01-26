@@ -4,35 +4,33 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class EventoService {
-  eventos: any[] = [];
+  eventos: any[] = []; 
 
   constructor() { }
 
   criarEvento(nome: string) {
-    const novoEvento = { id: this.eventos.length + 1, nome: nome, data: new Date() };
+    const novoEvento = { nome: nome };
     this.eventos.push(novoEvento);
     return novoEvento;
   }
 
-  obterEvento() {
-    return this.eventos;
+  obterEventos() {
+    return this.eventos.slice(); 
   }
 
-  obterEventoPorId(id: number) {
-    return this.eventos.find(evento => evento.id === id);
+  obterEventoPorId(index: number) {
+    return this.eventos[index];
   }
 
-  atualizarEvento(id: number, novoNome: string) {
-    const evento = this.obterEventoPorId(id);
-    if (evento) {
-      evento.nome = novoNome;
+  atualizarEvento(index: number, novoNome: string) {
+    if (this.eventos[index]) {
+      this.eventos[index].nome = novoNome;
     }
   }
 
-  excluirEvento(id: number) {
-    const indice = this.eventos.findIndex(evento => evento.id === id);
-    if (indice !== -1) {
-      this.eventos.splice(indice, 1);
+  excluirEvento(index: number) {
+    if (index >= 0 && index < this.eventos.length) {
+      this.eventos.splice(index, 1);
     }
   }
 }

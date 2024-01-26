@@ -11,21 +11,31 @@ export class EventoPage {
   nomeEvento: string = '';
 
   constructor(private eventoService: EventoService) {
-    this.eventos = this.eventoService.obterEvento();
+    this.carregarEventos();
   }
 
   criarEvento() {
-    this.eventoService.criarEvento(this.nomeEvento);
-    this.eventos = this.eventoService.obterEvento();
-    this.nomeEvento = ''; // Limpa o campo após a criação do evento
+    if (this.nomeEvento.trim() !== '') {
+      this.eventoService.criarEvento(this.nomeEvento);
+      this.carregarEventos();
+      this.nomeEvento = ''; 
+    }
+  }
+
+  carregarEventos() {
+    this.eventos = this.eventoService.obterEventos();
   }
 
   editarEvento(index: number) {
-    // Lógica para edição de um evento
+    const novoNome = prompt('Digite o novo nome do evento:');
+    if (novoNome !== null) {
+      this.eventoService.atualizarEvento(index, novoNome);
+      this.carregarEventos();
+    }
   }
 
   excluirEvento(index: number) {
     this.eventoService.excluirEvento(index);
-    this.eventos = this.eventoService.obterEvento();
+    this.carregarEventos();
   }
 }
