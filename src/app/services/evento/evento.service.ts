@@ -14,7 +14,7 @@ export class EventoService {
     return novoEvento;
   }
 
-  obterEventos() {
+  obterEvento() {
     return this.eventos;
   }
 

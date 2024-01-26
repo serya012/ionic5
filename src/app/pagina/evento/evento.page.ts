@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { EventoService } from '../../services/evento.service';
+import { EventoService } from '../../services/evento/evento.service';
 
 @Component({
   selector: 'app-evento',
@@ -8,38 +7,25 @@ import { EventoService } from '../../services/evento.service';
   styleUrls: ['./evento.page.scss'],
 })
 export class EventoPage {
-  nomeEvento: string = '';
   eventos: any[] = [];
+  nomeEvento: string = '';
 
-  constructor(private navCtrl: NavController, private eventoService: EventoService) {
-    this.carregarEventos();
+  constructor(private eventoService: EventoService) {
+    this.eventos = this.eventoService.obterEvento();
   }
 
   criarEvento() {
-    if (!this.nomeEvento) {
-      console.error('Preencha o nome do evento.');
-      return;
-    }
-
     this.eventoService.criarEvento(this.nomeEvento);
-    this.carregarEventos();
-    this.nomeEvento = ''; // Limpa o campo após criar o evento
+    this.eventos = this.eventoService.obterEvento();
+    this.nomeEvento = ''; // Limpa o campo após a criação do evento
   }
 
-  carregarEventos() {
-    this.eventos = this.eventoService.obterEventos();
+  editarEvento(index: number) {
+    // Lógica para edição de um evento
   }
 
-  editarEvento(id: number) {
-    const novoNome = prompt('Digite o novo nome do evento:');
-    if (novoNome !== null) {
-      this.eventoService.atualizarEvento(id, novoNome);
-      this.carregarEventos();
-    }
-  }
-
-  excluirEvento(id: number) {
-    this.eventoService.excluirEvento(id);
-    this.carregarEventos();
+  excluirEvento(index: number) {
+    this.eventoService.excluirEvento(index);
+    this.eventos = this.eventoService.obterEvento();
   }
 }
