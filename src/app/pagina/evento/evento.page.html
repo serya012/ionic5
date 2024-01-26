@@ -1,3 +1,4 @@
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Eventos</ion-title>
@@ -8,7 +9,12 @@
   <ion-list>
     <ion-item *ngFor="let evento of eventos; let i = index">
       <ion-label>{{ evento.nome }}</ion-label>
+      <ion-note>{{ evento.dia }}</ion-note>
+      <ion-note>{{ evento.hora }}</ion-note>
+      <ion-note>{{ evento.localizacao }}</ion-note>
+      <ion-note>{{ evento.inicio }} - {{ evento.termino }}</ion-note>
       <ion-buttons slot="end">
+        <ion-button (click)="verDetalhesEvento(i)">Ver Detalhes</ion-button>
         <ion-button (click)="editarEvento(i)">Editar</ion-button>
         <ion-button (click)="excluirEvento(i)">Excluir</ion-button>
       </ion-buttons>
@@ -18,6 +24,26 @@
   <ion-item>
     <ion-label position="floating">Nome do Evento</ion-label>
     <ion-input [(ngModel)]="nomeEvento"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Dia</ion-label>
+    <ion-input [(ngModel)]="novoDia"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Hora</ion-label>
+    <ion-input [(ngModel)]="novaHora"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Localização</ion-label>
+    <ion-input [(ngModel)]="novaLocalizacao"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Início</ion-label>
+    <ion-input [(ngModel)]="novoInicio"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Término</ion-label>
+    <ion-input [(ngModel)]="novoTermino"></ion-input>
   </ion-item>
 
   <ion-button expand="full" (click)="criarEvento()">Criar Evento</ion-button>
