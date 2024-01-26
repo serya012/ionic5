@@ -9,7 +9,7 @@ export class EventoService {
   constructor() { }
 
   criarEvento(nome: string) {
-    const novoEvento = { nome: nome, data: new Date() };
+    const novoEvento = { id: this.eventos.length + 1, nome: nome, data: new Date() };
     this.eventos.push(novoEvento);
     return novoEvento;
   }
@@ -19,7 +19,7 @@ export class EventoService {
   }
 
   obterEventoPorId(id: number) {
-    return this.eventos[id];
+    return this.eventos.find(evento => evento.id === id);
   }
 
   atualizarEvento(id: number, novoNome: string) {
@@ -30,6 +30,9 @@ export class EventoService {
   }
 
   excluirEvento(id: number) {
-    this.eventos.splice(id, 1);
+    const indice = this.eventos.findIndex(evento => evento.id === id);
+    if (indice !== -1) {
+      this.eventos.splice(indice, 1);
+    }
   }
 }
