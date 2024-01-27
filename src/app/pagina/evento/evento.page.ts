@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
 import { EventoService } from '../../services/evento/evento.service';
 
 @Component({
@@ -10,46 +9,17 @@ import { EventoService } from '../../services/evento/evento.service';
 export class EventoPage {
   eventos: any[] = [];
   nomeEvento: string = '';
-  novoDia: string = '';
-  novaHora: string = '';
-  novaLocalizacao: string = '';
-  novoInicio: string = '';
-  novoTermino: string = '';
 
-  constructor(private navCtrl: NavController, private eventoService: EventoService) {
-    this.eventos = this.eventoService.obterEventos();
-    // Limpe as novas propriedades no construtor
-    this.novoDia = '';
-    this.novaHora = '';
-    this.novaLocalizacao = '';
-    this.novoInicio = '';
-    this.novoTermino = '';
+  constructor(private eventoService: EventoService) {
+    this.carregarEventos();
   }
 
   criarEvento() {
-    if (!this.nomeEvento) {
-      console.error('Preencha o nome do evento.');
-      return;
+    if (this.nomeEvento.trim() !== '') {
+      this.eventoService.criarEvento(this.nomeEvento);
+      this.carregarEventos();
+      this.nomeEvento = ''; 
     }
-
-    // Altere esta linha para incluir as novas propriedades
-    this.eventoService.criarEvento(
-      this.nomeEvento,
-      this.novoDia,
-      this.novaHora,
-      this.novaLocalizacao,
-      this.novoInicio,
-      this.novoTermino
-    );
-
-    this.carregarEventos();
-    this.nomeEvento = '';
-    // Limpe as novas propriedades após criar o evento
-    this.novoDia = '';
-    this.novaHora = '';
-    this.novaLocalizacao = '';
-    this.novoInicio = '';
-    this.novoTermino = '';
   }
 
   carregarEventos() {
@@ -57,7 +27,11 @@ export class EventoPage {
   }
 
   editarEvento(index: number) {
-    // Lógica para edição de um evento
+    const novoNome = prompt('Digite o novo nome do evento:');
+    if (novoNome !== null) {
+      this.eventoService.atualizarEvento(index, novoNome);
+      this.carregarEventos();
+    }
   }
 
   excluirEvento(index: number) {
