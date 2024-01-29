@@ -3,6 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+<<<<<<< HEAD
     <ion-title>Evento</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,4 +18,27 @@
       <ion-note>{{ evento.inicio }} - {{ evento.termino }}</ion-note>
     </ion-item>
   </ion-list>
+=======
+    <ion-title>Eventos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let evento of eventos; let i = index">
+      <ion-label>{{ evento.nome }}</ion-label>
+      <ion-buttons slot="end">
+        <ion-button (click)="editarEvento(i)">Editar</ion-button>
+        <ion-button (click)="excluirEvento(i)">Excluir</ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label position="floating">Nome do Evento</ion-label>
+    <ion-input [(ngModel)]="nomeEvento"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="criarEvento()">Criar Evento</ion-button>
+>>>>>>> parent of 8bf9036 (icons bootstrap/evento page)
 </ion-content>
