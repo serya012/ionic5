@@ -14,22 +14,18 @@ export class EventoPage {
     this.carregarEventos();
   }
 
-  criarEvento() {
+  async criarEvento() {
     if (this.nomeEvento.trim() !== '') {
-      this.eventoService.criarEvento(this.nomeEvento);
+      await this.eventoService.criarEvento(this.nomeEvento);
       this.carregarEventos();
       this.nomeEvento = ''; 
     }
   }
 
-  carregarEventos() {
-    this.eventos = this.eventoService.obterEventos();
-  }
-
-  editarEvento(index: number) {
+  async editarEvento(index: number) {
     const novoNome = prompt('Digite o novo nome do evento:');
     if (novoNome !== null) {
-      this.eventoService.atualizarEvento(index, novoNome);
+      await this.eventoService.atualizarEvento(index, novoNome);
       this.carregarEventos();
     }
   }
@@ -39,8 +35,16 @@ export class EventoPage {
     this.carregarEventos();
   }
   
-  verDetalhesEvento(index: number) {
-    // Your implementation for viewing details goes here
-    console.log('Ver detalhes do evento', index);
+  carregarEventos() {
+    this.eventos = this.eventoService.obterEventos();
   }
+
+  verDetalhesEvento(index: number) {
+    const eventoSelecionado = this.eventos[index];
+  
+    // You can replace the following lines with your custom logic for viewing details
+    alert(`Detalhes do evento ${eventoSelecionado.nome}: \nData: ${eventoSelecionado.data}, Local: ${eventoSelecionado.local}`);
+    console.log('Ver detalhes do evento', eventoSelecionado);
+  }
+  
 }

@@ -33,33 +33,17 @@ const routes: Routes = [
   },
   {
     path: 'welcome',
-    loadChildren: () => import('./pagina/welcome/welcome.module').then( m => m.WelcomePageModule)
-  },  {
-    path: 'configuracao',
-<<<<<<< HEAD
-    loadChildren: () => import('./pagina/configuracao/configuracao.module').then( m => m.ConfiguracaoPageModule)
-  }
-=======
-    loadChildren: () => import('./pagina/configuracao/configuracao.module').then(m => m.ConfiguracaoPageModule)
-  },
-  {
-    path: 'welcome',
-    loadChildren: () => import('./pagina/welcome/welcome.module').then( m => m.WelcomePageModule)
+    loadChildren: () => import('./pagina/welcome/welcome.module').then(m => m.WelcomePageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./conta/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./conta/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'cadastro',
-    loadChildren: () => import('./conta/cadastro/cadastro.module').then( m => m.CadastroPageModule)
+    loadChildren: () => import('./conta/cadastro/cadastro.module').then(m => m.CadastroPageModule)
   }
-
 ];
->>>>>>> 8cbad8e2fd2be2057b33c1ea9b2f4b36c223237b
-
-];
-
 
 @NgModule({
   imports: [

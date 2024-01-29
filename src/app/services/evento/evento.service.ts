@@ -1,36 +1,46 @@
-import { Injectable } from '@angular/core';
+import { Component } from '@angular/core';
+import { EventoService } from '../../services/evento/evento.service';
 
-@Injectable({
-  providedIn: 'root'
+@Component({
+  selector: 'app-evento',
+  templateUrl: './evento.page.html',
+  styleUrls: ['./evento.page.scss'],
 })
-export class EventoService {
-  eventos: any[] = []; 
+export class EventoPage {
+  eventos: any[] = [];
+  nomeEvento: string = '';
 
-  constructor() { }
-
-  criarEvento(nome: string) {
-    const novoEvento = { nome: nome };
-    this.eventos.push(novoEvento);
-    return novoEvento;
+  constructor(private eventoService: EventoService) {
+    this.carregarEventos();
   }
 
-  obterEventos() {
-    return this.eventos.slice(); 
+  async criarEvento() {
+    if (this.nomeEvento.trim() !== '') {
+      await this.eventoService.criarEvento(this.nomeEvento);
+      this.carregarEventos();
+      this.nomeEvento = ''; 
+    }
   }
 
-  obterEventoPorId(index: number) {
-    return this.eventos[index];
-  }
-
-  atualizarEvento(index: number, novoNome: string) {
-    if (this.eventos[index]) {
-      this.eventos[index].nome = novoNome;
+  async editarEvento(index: number) {
+    const novoNome = prompt('Digite o novo nome do evento:');
+    if (novoNome !== null) {
+      await this.eventoService.atualizarEvento(index, novoNome);
+      this.carregarEventos();
     }
   }
 
   excluirEvento(index: number) {
-    if (index >= 0 && index < this.eventos.length) {
-      this.eventos.splice(index, 1);
-    }
+    this.eventoService.excluirEvento(index);
+    this.carregarEventos();
+  }
+
+  carregarEventos() {
+    this.eventos = this.eventoService.obterEventos();
+  }
+
+  verDetalhesEvento(index: number) {
+    const eventoSelecionado = this.eventos[index];
+    this.router.navigate(['/detalhes-evento', { evento: JSON.stringify(eventoSelecionado) }]);
   }
 }

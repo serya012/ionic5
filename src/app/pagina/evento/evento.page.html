@@ -1,22 +1,20 @@
-<!-- detalhes-evento.page.html -->
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/eventos"></ion-back-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Detalhes do Evento</ion-title>
+    <ion-title>Evento</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-card-content>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let evento of eventos; let i = index" (click)="verDetalhesEvento(i)">
       <ion-label>{{ evento.nome }}</ion-label>
       <ion-note>{{ evento.dia }}</ion-note>
       <ion-note>{{ evento.hora }}</ion-note>
       <ion-note>{{ evento.localizacao }}</ion-note>
       <ion-note>{{ evento.inicio }} - {{ evento.termino }}</ion-note>
-      <!-- Adicione outros detalhes do evento conforme necessário -->
-    </ion-card-content>
-  </ion-card>
+    </ion-item>
+  </ion-list>
 </ion-content>
