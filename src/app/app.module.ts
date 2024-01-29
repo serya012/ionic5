@@ -7,12 +7,16 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { FestaService } from './services/festaservice/festa.service';
+
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    FestaService
     
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

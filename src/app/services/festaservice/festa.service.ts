@@ -1,22 +1,23 @@
 import { Component } from '@angular/core';
-import { EventoService } from '../../services/evento/evento.service';
+import { FestaService } from './festa.service';
 
 @Component({
   selector: 'app-evento',
   templateUrl: './evento.page.html',
   styleUrls: ['./evento.page.scss'],
 })
+export class FestaService {}
 export class EventoPage {
   eventos: any[] = [];
   nomeEvento: string = '';
 
-  constructor(private eventoService: EventoService) {
+  constructor(private FestaService: FestaService) {
     this.carregarEventos();
   }
 
   async criarEvento() {
     if (this.nomeEvento.trim() !== '') {
-      await this.eventoService.criarEvento(this.nomeEvento);
+      await this.FestaService.criarFesta(this.nomeEvento);
       this.carregarEventos();
       this.nomeEvento = ''; 
     }
@@ -25,22 +26,23 @@ export class EventoPage {
   async editarEvento(index: number) {
     const novoNome = prompt('Digite o novo nome do evento:');
     if (novoNome !== null) {
-      await this.eventoService.atualizarEvento(index, novoNome);
+      await this.FestaService.atualizarFesta                                                        (index, novoNome);
       this.carregarEventos();
     }
   }
 
   excluirEvento(index: number) {
-    this.eventoService.excluirEvento(index);
+    this.FestaService.excluirFesta(index);
     this.carregarEventos();
   }
 
   carregarEventos() {
-    this.eventos = this.eventoService.obterEventos();
+    this.eventos = this.FestaService.obterFesta();
   }
 
   verDetalhesEvento(index: number) {
     const eventoSelecionado = this.eventos[index];
-    this.router.navigate(['/detalhes-evento', { evento: JSON.stringify(eventoSelecionado) }]);
   }
+
+
 }

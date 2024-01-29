@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EventoService } from '../../services/evento/evento.service';
+import { FestaService } from '../../services/festaservice/festa.service';
 
 @Component({
   selector: 'app-evento',
@@ -10,13 +10,13 @@ export class EventoPage {
   eventos: any[] = [];
   nomeEvento: string = '';
 
-  constructor(private eventoService: EventoService) {
+  constructor(private festaService: FestaService) {
     this.carregarEventos();
   }
 
   async criarEvento() {
     if (this.nomeEvento.trim() !== '') {
-      await this.eventoService.criarEvento(this.nomeEvento);
+      await this.festaService.criarEvento(this.nomeEvento);
       this.carregarEventos();
       this.nomeEvento = ''; 
     }
@@ -25,18 +25,18 @@ export class EventoPage {
   async editarEvento(index: number) {
     const novoNome = prompt('Digite o novo nome do evento:');
     if (novoNome !== null) {
-      await this.eventoService.atualizarEvento(index, novoNome);
+      await this.festaService.atualizarEvento(index, novoNome);
       this.carregarEventos();
     }
   }
 
   excluirEvento(index: number) {
-    this.eventoService.excluirEvento(index);
+    this.festaService.excluirEvento(index);
     this.carregarEventos();
   }
   
   carregarEventos() {
-    this.eventos = this.eventoService.obterEventos();
+    this.eventos = this.festaService.obterEventos();
   }
 
   verDetalhesEvento(index: number) {
