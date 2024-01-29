@@ -38,7 +38,7 @@ export class EventoPage {
     this.eventoService.excluirEvento(index);
     this.carregarEventos();
   }
-
+  
   verDetalhesEvento(index: number) {
     // Your implementation for viewing details goes here
     console.log('Ver detalhes do evento', index);
