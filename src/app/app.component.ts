@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BootstrapOptions } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -7,10 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public appPages = [
     { title: 'Inbox', url: 'evento', icon: 'mail' },
-    { title: 'Outbox', url: 'configuracao', icon: 'paper-plane' },
+    { title: 'Outbox', url: 'orcamento', icon: 'paper-plane' },
     { title: 'Favorites', url: 'feedback', icon: 'heart' },
     { title: 'Archived', url: 'perfil', icon: 'archive' },
-    { title: 'Trash', url: 'configuracao', icon: 'trash' },
+    { title: 'Trash', url: 'configuracao', icon: 'bi bi-gear' },
     
   ];
  
