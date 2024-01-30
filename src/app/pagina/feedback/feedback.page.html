@@ -1,36 +1,13 @@
-<!-- feedback.page.html -->
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      Feedback
-    </ion-title>
+    <ion-title>feedback</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-list>
-    <ion-item>
-      <ion-label position="floating">Seu Nome</ion-label>
-      <ion-input [(ngModel)]="seuNome"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Avaliação</ion-label>
-      <div class="star-rating" (click)="setRating($event)">
-        <span *ngFor="let star of stars" [attr.data-value]="star" [class.active]="star <= avaliacao">&#9733;</span>
-      </div>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">Feedback</ion-label>
-      <ion-textarea [(ngModel)]="feedback"></ion-textarea>
-    </ion-item>
-  </ion-list>
-
-  <ion-button expand="full" (click)="enviarFeedback()">Enviar Feedback</ion-button>
-
-  
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">feedback</ion-title>
+    </ion-toolbar>
+  </ion-header>
 </ion-content>

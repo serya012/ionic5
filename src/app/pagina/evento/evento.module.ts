@@ -6,15 +6,14 @@ import { IonicModule } from '@ionic/angular';
 
 import { EventoPageRoutingModule } from './evento-routing.module';
 
-import { EventoPageM } from './evento.page';
+import { EventoPage } from './evento.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    EventoPageRoutingModule,
-    EventoPageModule
+    EventoPageRoutingModule
   ],
   declarations: [EventoPage]
 })
