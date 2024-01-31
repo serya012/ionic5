@@ -8,10 +8,10 @@ import { BootstrapOptions } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Eventos', url: 'evento', icon: 'envelope' }, // Use Bootstrap icon class here
+    { title: 'Eventos', url: 'evento', icon: 'balloon' }, // Use Bootstrap icon class here
     { title: 'Orcamento', url: 'orcamento', icon: 'send' },
     { title: 'Feedback', url: 'feedback', icon: 'heart' },
-    { title: 'Archived', url: 'perfil', icon: 'archive' },
-    { title: 'Configuracao', url: 'configuracao', icon: 'gear' },
+    { title: 'Perfil', url: 'perfil', icon: 'archive' },
+    { title: 'Configuracao', url: 'configuracao', icon: 'settings' },
   ];
 }
