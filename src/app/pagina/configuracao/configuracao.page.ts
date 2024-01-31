@@ -17,7 +17,7 @@ export class ConfiguracaoPage implements OnInit {
   entrar() {
     // Lógica de entrar na conta
     // Por exemplo, redirecionar para a página de login
-    this.router.navigate(['/login']); // Redirecionar para a página de login
+    this.router.navigate(['/perfil']); // Redirecionar para a página de login
   }
 
   sair() {
