@@ -3,14 +3,26 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Sobre</ion-title>
+    <ion-title class="ion-text-center">Orçamento</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">orcamento</ion-title>
+      <ion-title size="large">Orçamento</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-item>
+    <ion-label>Gasto</ion-label>
+    <ion-input type="number" [(ngModel)]="gasto"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Orçamento</ion-label>
+    <ion-input type="number" [(ngModel)]="orcamento"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="salvar()">Salvar</ion-button>
 </ion-content>
