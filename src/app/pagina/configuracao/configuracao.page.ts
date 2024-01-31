@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'; // Importe o Router se precisar redirecionar o usuário
 
 @Component({
   selector: 'app-configuracao',
@@ -13,14 +13,15 @@ export class ConfiguracaoPage implements OnInit {
   ngOnInit() {
   }
 
-  logout() {
-    // Lógica de logout
-    // Por exemplo, limpar dados do usuário e redirecionar para a página de login
+  entrar() {
+    // Lógica de entrar na conta
+    // Por exemplo, redirecionar para a página de login
+    this.router.navigate(['/login']); // Redirecionar para a página de login
+  }
 
-    // Limpar dados do usuário (por exemplo, removendo token de autenticação)
-    localStorage.removeItem('token'); // Supondo que você armazene o token de autenticação localmente
-
-    // Redirecionar para a página de login
-    this.router.navigate(['/evento']);
+  sair() {
+    // Lógica de sair da conta
+    // Por exemplo, limpar dados do usuário e redirecionar para a página inicial
+    this.router.navigate(['/']); // Redirecionar para a página inicial
   }
 }
