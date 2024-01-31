@@ -1,6 +1,7 @@
-// /src/app/pagina/evento/evento.page.ts
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { IonicModule, AlertController } from '@ionic/angular';
+
 
 interface Evento {
   id: number;
@@ -37,10 +38,70 @@ export class EventoPage {
     // Adicione mais eventos conforme necessário
   ];
 
-  constructor(private navCtrl: NavController) {}
+  constructor(
+    private navCtrl: NavController,
+    private alertController: AlertController
+  ) {}
 
-  verDetalhes(evento: Evento) {
-    // Implemente a navegação para a página de detalhes do evento se necessário
-    // this.navCtrl.navigateForward(`/evento-detalhes/${evento.id}`);
+  async verDetalhes(evento: Evento) {
+    this.navCtrl.navigateForward(`/evento-detalhes/${evento.id}`);
   }
-}
+
+  async editarEvento(evento: Evento) {
+    // Lógica para editar o evento
+    // Por exemplo, você pode abrir um modal para editar as propriedades do evento
+    const alert = await this.alertController.create({
+      header: 'Editar Evento',
+      inputs: [
+        {
+          name: 'nome',
+          type: 'text',
+          value: evento.nome,
+          placeholder: 'Nome do Evento',
+        },
+        // Adicione outros campos conforme necessário
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+        },
+        {
+          text: 'Salvar',
+          handler: (data: any) => {
+            // Lógica para salvar as alterações
+            evento.nome = data.nome;
+            // Atualize outros campos conforme necessário
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+  }
+
+  async excluirEvento(evento: Evento) {
+    const alert = await this.alertController.create({
+      header: 'Excluir Evento',
+      message: `Deseja realmente excluir o evento: ${evento.nome}?`,
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+        },
+        {
+          text: 'Excluir',
+          handler: () => {
+            // Lógica para excluir o evento
+            const index = this.eventos.findIndex((e) => e.id === evento.id);
+            if (index !== -1) {
+              this.eventos.splice(index, 1);
+            }
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+  }
+} 
