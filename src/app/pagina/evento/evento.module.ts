@@ -7,14 +7,26 @@ import { IonicModule } from '@ionic/angular';
 import { EventoPageRoutingModule } from './evento-routing.module';
 
 import { EventoPage } from './evento.page';
+import { IonicHeaderModule } from 'ionic-header';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    EventoPageRoutingModule
+    EventoPageRoutingModule,
+    IonicHeaderModule 
   ],
   declarations: [EventoPage]
 })
-export class EventoPageModule {}
+// /src/app/pagina/evento/evento.model.ts
+// /src/app/pagina/evento/evento.model.ts
+export interface Evento {
+  id: number;
+  nome: string;
+  data: string;
+  horaInicio: string;
+  horaTermino: string;
+  local: string;
+}
