@@ -35,4 +35,10 @@ export class ConfiguracaoPage implements OnInit {
 
     await alert.present();
   }
+
+  alterarConta() {
+    // Lógica para alterar a conta do usuário
+    // Por exemplo, redirecionar para a página de alteração de conta
+    this.router.navigate(['/alterar-conta']); // Redirecionar para a página de alteração de conta
+  }
 }
