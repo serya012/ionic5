@@ -10,7 +10,36 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">feedback</ion-title>
+      <ion-title size="large">Feedback</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div class="ion-padding">
+    <ion-card>
+      <ion-card-header>
+        Sua Opinião é Importante!
+      </ion-card-header>
+
+      <ion-card-content>
+        <!-- Avaliação por estrelas -->
+        <ion-item>
+          <ion-label>Avaliação</ion-label>
+          <div class="star-rating">
+            <ion-icon *ngFor="let star of stars" 
+                      name="star" 
+                      [class.active]="star <= avaliacao"
+                      (click)="setRating(star)">
+            </ion-icon>
+          </div>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Comentários:</ion-label>
+          <ion-textarea [(ngModel)]="comentarios" placeholder="Deixe seus comentários aqui"></ion-textarea>
+        </ion-item>
+
+        <ion-button expand="full" color="primary" (click)="enviarFeedback()">Enviar Feedback</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
