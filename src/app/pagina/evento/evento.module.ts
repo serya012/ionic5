@@ -1,3 +1,4 @@
+// /src/app/pagina/evento/evento.module.ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -5,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { EventoPageRoutingModule } from './evento-routing.module';
-
 import { EventoPage } from './evento.page';
 
 @NgModule({
@@ -15,6 +15,6 @@ import { EventoPage } from './evento.page';
     IonicModule,
     EventoPageRoutingModule
   ],
-  declarations: [EventoPage]
+  declarations: [EventoPage],
 })
 export class EventoPageModule {}
