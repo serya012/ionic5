@@ -1,28 +1,16 @@
-<!-- /src/app/pagina/evento/evento.page.html -->
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Eventos</ion-title>
+    <ion-title class="ion-text-center">Evento</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
-    <ion-item *ngFor="let evento of eventos" (click)="verDetalhes(evento)">
-      <ion-label>{{ evento.nome }}</ion-label>
-      <p>Data: {{ evento.data }}</p>
-      <p>Hora de início: {{ evento.horaInicio }}</p>
-      <p>Hora de término: {{ evento.horaTermino }}</p>
-      <p>Local: {{ evento.local }}</p>
-    </ion-item>
-  </ion-list>
-
-  <!-- Botão FAB para adicionar um novo evento -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="adicionarEvento()">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">evento</ion-title>
+    </ion-toolbar>
+  </ion-header>
 </ion-content>
