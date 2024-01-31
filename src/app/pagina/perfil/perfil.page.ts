@@ -15,4 +15,9 @@ export class PerfilPage {
     // Lógica para selecionar uma foto, pode ser usando uma biblioteca ou nativo do Ionic/Cordova
     // Atualize a propriedade 'fotoPerfil' com o caminho da foto selecionada
   }
+  entrar() {
+    // Lógica de entrar na conta
+    // Por exemplo, redirecionar para a página de login
+    this.router.navigate(['/evento']); // Redirecionar para a página de login
+  }
 }
