@@ -43,20 +43,22 @@
     </ion-card>
 
     <!-- Seção de Foto de Perfil -->
-    <ion-card>
-      <ion-card-header>
-        Foto de Perfil
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item>
-          <ion-label>Escolher Foto:</ion-label>
-          <ion-button (click)="selecionarFoto()">Escolher</ion-button>
-        </ion-item>
+    <!-- Seção de Foto de Perfil -->
+<ion-card>
+  <ion-card-header>
+    Foto de Perfil
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-avatar>
+        <ion-icon name="person-sharp" class="avatar-icon"></ion-icon>
+      </ion-avatar>
+      <ion-label>Escolher Foto:</ion-label>
+      <ion-button (click)="selecionarFoto()">Escolher</ion-button>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
 
-        <!-- Exibição da Foto de Perfil (pode ser uma imagem ou um ícone) -->
-        <ion-img [src]="fotoPerfil"></ion-img>
-      </ion-card-content>
-    </ion-card>
 
     <!-- Botão Entrar -->
     <ion-button expand="full" color="primary" (click)="entrar()">Entrar</ion-button>
