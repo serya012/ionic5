@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { NavController, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-orcamento',
@@ -8,9 +8,9 @@ import { AlertController } from '@ionic/angular';
 })
 export class OrcamentoPage {
   gasto: string = '';
-  orcamento: string='';
+  orcamento: string = '';
 
-  constructor(private alertController: AlertController) {}
+  constructor(private navCtrl: NavController, private alertController: AlertController) {}
 
   async salvar() {
     if (this.gasto && this.orcamento) {
@@ -28,5 +28,11 @@ export class OrcamentoPage {
     });
 
     await alert.present();
+  }
+
+  // Adicione este método para a navegação
+  orcamentod() {
+    // Substitua 'OrcaMendoPage' pelo nome real da sua página de destino
+    this.navCtrl.navigateForward('/orcamentod');
   }
 }
