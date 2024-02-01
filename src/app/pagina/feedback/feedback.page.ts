@@ -66,7 +66,7 @@ export class FeedbackPage {
     return new Promise(resolve => {
       setTimeout(() => {
         // Substitua este bloco com a lógica de envio real
-        console.log('Avaliação enviada:', this.avaliacao, this.comentarios);
+        console.log('Avaliação enviada:', this.avaliacao);
         console.log(this.comentarios);
         resolve();
       }, 2000); // Simula o envio por 2 segundos
