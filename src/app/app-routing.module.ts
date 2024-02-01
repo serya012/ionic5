@@ -27,10 +27,13 @@ const routes: Routes = [
   {
     path: 'configuracao',
     loadChildren: () => import('./pagina/configuracao/configuracao.module').then(m => m.ConfiguracaoPageModule)
-  },  {
+  },
+  {
     path: 'orcamentod',
     loadChildren: () => import('./pagina/orcamentod/orcamentod.module').then( m => m.OrcamentodPageModule)
-  }
+  },
+  
+
 
 ];
 

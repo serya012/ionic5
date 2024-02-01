@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { IonicModule, AlertController } from '@ionic/angular';
+// evento.page.ts
 
+import { Component } from '@angular/core';
+import { NavController, AlertController } from '@ionic/angular';
 
 interface Evento {
   id: number;
@@ -18,38 +18,84 @@ interface Evento {
   styleUrls: ['evento.page.scss'],
 })
 export class EventoPage {
-  eventos: Evento[] = [
-    {
-      id: 1,
-      nome: 'Evento 1',
-      data: '2024-02-01',
-      horaInicio: '09:00',
-      horaTermino: '12:00',
-      local: 'Local A',
-    },
-    {
-      id: 2,
-      nome: 'Evento 2',
-      data: '2024-02-02',
-      horaInicio: '14:00',
-      horaTermino: '17:00',
-      local: 'Local B',
-    },
-    // Adicione mais eventos conforme necessário
-  ];
+  eventos: Evento[] = [];
 
   constructor(
     private navCtrl: NavController,
-    private alertController: AlertController
+    private alertController: AlertController,
   ) {}
+
+  adicionarEvento() {
+    this.mostrarAlertaAdicionarEvento();
+  }
+
+  async mostrarAlertaAdicionarEvento() {
+    const alerta = await this.alertController.create({
+      header: 'Novo Evento',
+      inputs: [
+        {
+          name: 'nome',
+          type: 'text',
+          placeholder: 'Nome do Evento',
+        },
+        {
+          name: 'data',
+          type: 'date',
+          placeholder: 'Data',
+        },
+        {
+          name: 'horaInicio',
+          type: 'time',
+          placeholder: 'Hora de Início',
+        },
+        {
+          name: 'horaTermino',
+          type: 'time',
+          placeholder: 'Hora de Término',
+        },
+        {
+          name: 'local',
+          type: 'text',
+          placeholder: 'Local',
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+        },
+        {
+          text: 'Adicionar',
+          handler: (dados: any) => {
+            this.adicionarEventoS({
+              id: this.gerarIdUnico(),
+              nome: dados.nome,
+              data: dados.data,
+              horaInicio: dados.horaInicio,
+              horaTermino: dados.horaTermino,
+              local: dados.local,
+            });
+          },
+        },
+      ],
+    });
+
+    await alerta.present();
+  }
+
+  adicionarEventoS(evento: Evento) {
+    this.eventos.push(evento);
+  }
+
+  gerarIdUnico(): number {
+    return new Date().getTime();
+  }
 
   async verDetalhes(evento: Evento) {
     this.navCtrl.navigateForward(`/evento-detalhes/${evento.id}`);
   }
 
   async editarEvento(evento: Evento) {
-    // Lógica para editar o evento
-    // Por exemplo, você pode abrir um modal para editar as propriedades do evento
     const alert = await this.alertController.create({
       header: 'Editar Evento',
       inputs: [
@@ -59,7 +105,30 @@ export class EventoPage {
           value: evento.nome,
           placeholder: 'Nome do Evento',
         },
-        // Adicione outros campos conforme necessário
+        {
+          name: 'data',
+          type: 'date',
+          value: evento.data,
+          placeholder: 'Data',
+        },
+        {
+          name: 'horaInicio',
+          type: 'time',
+          value: evento.horaInicio,
+          placeholder: 'Hora de Início',
+        },
+        {
+          name: 'horaTermino',
+          type: 'time',
+          value: evento.horaTermino,
+          placeholder: 'Hora de Término',
+        },
+        {
+          name: 'local',
+          type: 'text',
+          value: evento.local,
+          placeholder: 'Local',
+        },
       ],
       buttons: [
         {
@@ -69,8 +138,12 @@ export class EventoPage {
         {
           text: 'Salvar',
           handler: (data: any) => {
-            // Lógica para salvar as alterações
+            // Atualize todos os campos do evento
             evento.nome = data.nome;
+            evento.data = data.data;
+            evento.horaInicio = data.horaInicio;
+            evento.horaTermino = data.horaTermino;
+            evento.local = data.local;
             // Atualize outros campos conforme necessário
           },
         },
@@ -92,7 +165,6 @@ export class EventoPage {
         {
           text: 'Excluir',
           handler: () => {
-            // Lógica para excluir o evento
             const index = this.eventos.findIndex((e) => e.id === evento.id);
             if (index !== -1) {
               this.eventos.splice(index, 1);
@@ -104,4 +176,4 @@ export class EventoPage {
 
     await alert.present();
   }
-} 
+}

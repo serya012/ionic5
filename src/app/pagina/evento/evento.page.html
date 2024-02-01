@@ -8,31 +8,22 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
-    <ion-item *ngFor="let evento of eventos">
-      <ion-label>{{ evento.nome }}</ion-label>
-      <p>Data: {{ evento.data }}</p>
-      <p>Hora de início: {{ evento.horaInicio }}</p>
-      <p>Hora de término: {{ evento.horaTermino }}</p>
-      <p>Local: {{ evento.local }}</p>
 
-      <!-- Botões de ação -->
-      <ion-buttons slot="end">
-        <ion-button (click)="verDetalhes(evento)">Ver</ion-button>
-        <ion-button (click)="editarEvento(evento)">Editar</ion-button>
-        <ion-button (click)="excluirEvento(evento)">Excluir</ion-button>
-      </ion-buttons>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="adicionarEvento()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-list>
+    <ion-item *ngFor="let evento of eventos" lines="none">
+      <ion-label>{{ evento.nome }}</ion-label>
+      <ion-label>{{ evento.data }}</ion-label>
+      <ion-label>{{ evento.horaInicio }}</ion-label>
+      <ion-label>{{ evento.horaTermino }}</ion-label>
+      <ion-label>{{ evento.local }}</ion-label>
+      <ion-button color="success" fill="outline" (click)="editarEvento(evento)">Editar</ion-button>
+      <ion-button color="danger" fill="outline" (click)="excluirEvento(evento)">Excluir</ion-button>
     </ion-item>
   </ion-list>
-
-  <!-- Botão FAB para adicionar um novo evento -->
-  
-
-<ion-list>
-  <ion-item *ngFor="let evento of eventos">
-    {{ evento.nome }}
-    <ion-button (click)="verDetalhes(evento)">Ver Detalhes</ion-button>
-    <ion-button (click)="editarEvento(evento)">Editar</ion-button>
-    <ion-button (click)="excluirEvento(evento)">Excluir</ion-button>
-  </ion-item>
-</ion-list>
+</ion-content>
