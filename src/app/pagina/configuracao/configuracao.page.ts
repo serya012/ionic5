@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'; // Importe o Router se precisar redirecionar o usuário
-import { AlertController } from '@ionic/angular'; // Importe o AlertController para exibir informações
+import { Router } from '@angular/router';
+import { AlertController, ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-configuracao',
@@ -9,21 +9,21 @@ import { AlertController } from '@ionic/angular'; // Importe o AlertController p
 })
 export class ConfiguracaoPage implements OnInit {
 
-  constructor(private router: Router, private alertController: AlertController) { }
+  constructor(
+    private router: Router,
+    private alertController: AlertController,
+    private modalController: ModalController
+  ) { }
 
   ngOnInit() {
   }
 
   entrar() {
-    // Lógica de entrar na conta
-    // Por exemplo, redirecionar para a página de login
-    this.router.navigate(['/perfil']); // Redirecionar para a página de login
+    this.router.navigate(['/perfil']);
   }
 
   sair() {
-    // Lógica de sair da conta
-    // Por exemplo, limpar dados do usuário e redirecionar para a página inicial
-    this.router.navigate(['/']); // Redirecionar para a página inicial
+    this.router.navigate(['/']);
   }
 
   async informacao() {
@@ -36,9 +36,36 @@ export class ConfiguracaoPage implements OnInit {
     await alert.present();
   }
 
-  alterarConta() {
-    // Lógica para alterar a conta do usuário
-    // Por exemplo, redirecionar para a página de alteração de conta
-    this.router.navigate(['/alterar-conta']); // Redirecionar para a página de alteração de conta
+  async alterarConta() {
+    const alert = await this.alertController.create({
+      header: 'Alterar Email',
+      subHeader: 'Digite o novo endereço de e-mail:',
+      inputs: [
+        {
+          name: 'novoEmail',
+          type: 'text',
+          placeholder: 'Novo E-mail'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Alteração de e-mail cancelada');
+          }
+        },
+        {
+          text: 'Salvar',
+          handler: (data) => {
+            // Lógica para salvar o novo e-mail
+            console.log('Novo E-mail:', data.novoEmail);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 }
