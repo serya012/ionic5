@@ -1,4 +1,3 @@
-// evento.page.ts
 
 import { Component } from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular';
