@@ -67,6 +67,12 @@ export class EventoPage {
         {
           text: 'Adicionar',
           handler: (dados: any) => {
+            // Verifique se todos os campos estão preenchidos
+            if (!dados.nome || !dados.data || !dados.horaInicio || !dados.horaTermino || !dados.local) {
+              this.mostrarAlertaCampoVazio();
+              return;
+            }
+
             this.adicionarEventoS({
               id: this.gerarIdUnico(),
               nome: dados.nome,
@@ -138,6 +144,12 @@ export class EventoPage {
         {
           text: 'Salvar',
           handler: (data: any) => {
+            // Verifique se todos os campos estão preenchidos
+            if (!data.nome || !data.data || !data.horaInicio || !data.horaTermino || !data.local) {
+              this.mostrarAlertaCampoVazio();
+              return;
+            }
+
             // Atualize todos os campos do evento
             evento.nome = data.nome;
             evento.data = data.data;
@@ -175,5 +187,15 @@ export class EventoPage {
     });
 
     await alert.present();
+  }
+
+  async mostrarAlertaCampoVazio() {
+    const alertaCampoVazio = await this.alertController.create({
+      header: 'Erro',
+      message: 'Por favor, preencha todos os campos.',
+      buttons: ['OK'],
+    });
+
+    await alertaCampoVazio.present();
   }
 }
