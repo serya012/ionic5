@@ -10,8 +10,8 @@ import { MenuController } from '@ionic/angular';
 export class WelcomePage {
   welcomeMessages: any[] = [
     {
-      title: 'Bem-vindo ao App de Gerenciamento de Festas!',
-      description: 'Organize seus eventos de maneira fácil e divertida.',
+      title: 'Seja bem-vindo a Minha Festa, ou melhor, a sua Festa 😉',
+      description: 'O mais novo aplicativo inovador para você gerenciar e personalizar as suas festas com seus companheiros',
     },
     {
       title: 'Outra mensagem de boas-vindas',

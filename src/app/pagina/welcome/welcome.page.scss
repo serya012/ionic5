@@ -6,3 +6,27 @@
     margin: 0 auto;
 }
 
+/* /src/app/pagina/welcome/welcome.page.scss */
+
+ion-content {
+    font-size: 18px; /* Tamanho da fonte para todo o conteúdo da página */
+  }
+  
+  ion-card-content {
+    font-size: 20px; /* Tamanho da fonte específico para o conteúdo do ion-card */
+    font-weight: bold; /* Pode adicionar negrito ou outras propriedades de estilo de fonte aqui */
+  }
+  
+  h3 {
+    font-size: 24px; /* Tamanho da fonte específico para títulos h3 */
+    color: #ffffff; /* Cor do texto, substitua pela cor desejada */
+  }
+  
+  p {
+    font-size: 16px; /* Tamanho da fonte específico para parágrafos */
+    color: #333; /* Cor do texto, substitua pela cor desejada */
+  }
+  .highlight-text {
+    color: #9000ff; /* Cor específica para a palavra "Minha Festa" */
+  }  
+
