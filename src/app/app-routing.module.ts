@@ -30,12 +30,7 @@ const routes: Routes = [
   },
   {
     path: 'configuracao',
-    loadChildren: () => import('./pagina/configuracao/configuracao.module').then(m => m.ConfiguracaoPageModule),
-    data: {
-      menuOptions: {
-        maxEdgeStart: 200 // Ajuste conforme necessário
-      }
-    }
+    loadChildren: () => import('./pagina/configuracao/configuracao.module').then(m => m.ConfiguracaoPageModule)
   },
   {
     path: 'orcamentod',
