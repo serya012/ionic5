@@ -12,3 +12,11 @@ ion-content {
     /* Tamanho médio, ajuste conforme necessário */
     cursor: pointer;
 }
+
+/* Seu arquivo de estilo (evento.page.scss) */
+
+.stacked-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
