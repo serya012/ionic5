@@ -18,13 +18,13 @@
 
   <!-- Opções de compra para Bolos -->
   <ion-list class="opcoes-list" *ngIf="categoriaSelecionada === 'bolos'">
-    <ion-item>
-      Bolo 1 - Preço: R$20
-    </ion-item>
-    <ion-item>
-      Bolo 2 - Preço: R$25
-    </ion-item>
-    <!-- Adicione mais opções conforme necessário -->
+    <ion-checkbox-group [(ngModel)]="opcoesBolos">
+      <ion-item *ngFor="let opcao of opcoesBolos">
+        <ion-label>{{ opcao.nome }} - Preço: {{ opcao.preco }}</ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="opcao.selecionado"></ion-checkbox>
+      </ion-item>
+    </ion-checkbox-group>
+    <ion-button (click)="selecionarTodos(opcoesBolos)">Selecionar Todos</ion-button>
   </ion-list>
 
   <!-- Botão para mostrar opções de Bebidas -->
@@ -34,13 +34,13 @@
 
   <!-- Opções de compra para Bebidas -->
   <ion-list class="opcoes-list" *ngIf="categoriaSelecionada === 'bebidas'">
-    <ion-item>
-      Bebida 1 - Preço: R$5
-    </ion-item>
-    <ion-item>
-      Bebida 2 - Preço: R$8
-    </ion-item>
-    <!-- Adicione mais opções conforme necessário -->
+    <ion-checkbox-group [(ngModel)]="opcoesBebidas">
+      <ion-item *ngFor="let opcao of opcoesBebidas">
+        <ion-label>{{ opcao.nome }} - Preço: {{ opcao.preco }}</ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="opcao.selecionado"></ion-checkbox>
+      </ion-item>
+    </ion-checkbox-group>
+    <ion-button (click)="selecionarTodos(opcoesBebidas)">Selecionar Todos</ion-button>
   </ion-list>
 
   <!-- Botão para mostrar opções de Decoração -->
@@ -50,13 +50,13 @@
 
   <!-- Opções de compra para Decoração -->
   <ion-list class="opcoes-list" *ngIf="categoriaSelecionada === 'decoracao'">
-    <ion-item>
-      Enfeite 1 - Preço: R$15
-    </ion-item>
-    <ion-item>
-      Enfeite 2 - Preço: R$10
-    </ion-item>
-    <!-- Adicione mais opções conforme necessário -->
+    <ion-checkbox-group [(ngModel)]="opcoesDecoracao">
+      <ion-item *ngFor="let opcao of opcoesDecoracao">
+        <ion-label>{{ opcao.nome }} - Preço: {{ opcao.preco }}</ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="opcao.selecionado"></ion-checkbox>
+      </ion-item>
+    </ion-checkbox-group>
+    <ion-button (click)="selecionarTodos(opcoesDecoracao)">Selecionar Todos</ion-button>
   </ion-list>
 
   <!-- Botão para mostrar opções de Comidas -->
@@ -66,13 +66,13 @@
 
   <!-- Opções de compra para Comidas -->
   <ion-list class="opcoes-list" *ngIf="categoriaSelecionada === 'comidas'">
-    <ion-item>
-      Comida 1 - Preço: R$10
-    </ion-item>
-    <ion-item>
-      Comida 2 - Preço: R$12
-    </ion-item>
-    <!-- Adicione mais opções conforme necessário -->
+    <ion-checkbox-group [(ngModel)]="opcoesComidas">
+      <ion-item *ngFor="let opcao of opcoesComidas">
+        <ion-label>{{ opcao.nome }} - Preço: {{ opcao.preco }}</ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="opcao.selecionado"></ion-checkbox>
+      </ion-item>
+    </ion-checkbox-group>
+    <ion-button (click)="selecionarTodos(opcoesComidas)">Selecionar Todos</ion-button>
   </ion-list>
 
 </ion-content>
