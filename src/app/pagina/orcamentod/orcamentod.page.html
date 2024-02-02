@@ -1,13 +1,78 @@
+<!-- orcamentod.page.html -->
+
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>orcamento</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Orçamento</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">orcamentod</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-text-center">
+
+  <!-- Botão para mostrar opções de Bolos -->
+  <ion-button class="opcoes-button" (click)="mostrarOpcoes('bolos')">
+    Opções de Bolos
+  </ion-button>
+
+  <!-- Opções de compra para Bolos -->
+  <ion-list class="opcoes-list" *ngIf="categoriaSelecionada === 'bolos'">
+    <ion-item>
+      Bolo 1 - Preço: R$20
+    </ion-item>
+    <ion-item>
+      Bolo 2 - Preço: R$25
+    </ion-item>
+    <!-- Adicione mais opções conforme necessário -->
+  </ion-list>
+
+  <!-- Botão para mostrar opções de Bebidas -->
+  <ion-button class="opcoes-button" (click)="mostrarOpcoes('bebidas')">
+    Opções de Bebidas
+  </ion-button>
+
+  <!-- Opções de compra para Bebidas -->
+  <ion-list class="opcoes-list" *ngIf="categoriaSelecionada === 'bebidas'">
+    <ion-item>
+      Bebida 1 - Preço: R$5
+    </ion-item>
+    <ion-item>
+      Bebida 2 - Preço: R$8
+    </ion-item>
+    <!-- Adicione mais opções conforme necessário -->
+  </ion-list>
+
+  <!-- Botão para mostrar opções de Decoração -->
+  <ion-button class="opcoes-button" (click)="mostrarOpcoes('decoracao')">
+    Opções de Decoração
+  </ion-button>
+
+  <!-- Opções de compra para Decoração -->
+  <ion-list class="opcoes-list" *ngIf="categoriaSelecionada === 'decoracao'">
+    <ion-item>
+      Enfeite 1 - Preço: R$15
+    </ion-item>
+    <ion-item>
+      Enfeite 2 - Preço: R$10
+    </ion-item>
+    <!-- Adicione mais opções conforme necessário -->
+  </ion-list>
+
+  <!-- Botão para mostrar opções de Comidas -->
+  <ion-button class="opcoes-button" (click)="mostrarOpcoes('comidas')">
+    Opções de Comidas
+  </ion-button>
+
+  <!-- Opções de compra para Comidas -->
+  <ion-list class="opcoes-list" *ngIf="categoriaSelecionada === 'comidas'">
+    <ion-item>
+      Comida 1 - Preço: R$10
+    </ion-item>
+    <ion-item>
+      Comida 2 - Preço: R$12
+    </ion-item>
+    <!-- Adicione mais opções conforme necessário -->
+  </ion-list>
+
 </ion-content>
