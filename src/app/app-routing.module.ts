@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'cadastro',
     loadChildren: () => import('./pagina/cadastro/cadastro.module').then( m => m.CadastroPageModule)
   },
+  {
+    path: 'home',
+    loadChildren: () => import('./pagina/home/home.module').then( m => m.HomePageModule)
+  },
 
 
   

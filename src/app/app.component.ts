@@ -13,5 +13,6 @@ export class AppComponent {
     { title: 'Feedback', url: 'feedback', icon: 'star' },
     { title: 'Perfil', url: 'perfil', icon: 'person' },
     { title: 'Configuracao', url: 'configuracao', icon: 'settings' },
+    { title: 'Home', url: 'home', icon: 'home' },
   ];
 }
