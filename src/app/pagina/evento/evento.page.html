@@ -16,7 +16,7 @@
   </ion-fab>
 
   <ion-list>
-    <ion-item *ngFor="let evento of eventos" lines="none">
+    <ion-item *ngFor="let evento of eventos" lines="none" class="stacked-item">
       <ion-label>{{ evento.nome }}</ion-label>
       <ion-label>{{ evento.data }}</ion-label>
       <ion-label>{{ evento.horaInicio }}</ion-label>
