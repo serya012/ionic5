@@ -27,6 +27,7 @@
     "@capacitor/keyboard": "5.0.8",
     "@capacitor/status-bar": "5.0.7",
     "@ionic/angular": "^7.0.0",
+    "@ionic/storage": "^4.0.0",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.3",
     "ionicons": "^7.2.2",

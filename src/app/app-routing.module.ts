@@ -5,7 +5,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'evento',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   },
   {
@@ -32,6 +32,19 @@ const routes: Routes = [
     path: 'orcamentod',
     loadChildren: () => import('./pagina/orcamentod/orcamentod.module').then( m => m.OrcamentodPageModule)
   },
+  {
+    path: 'welcome',
+    loadChildren: () => import('./pagina/welcome/welcome.module').then( m => m.WelcomePageModule)
+  },  {
+    path: 'login',
+    loadChildren: () => import('./pagina/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'cadastro',
+    loadChildren: () => import('./pagina/cadastro/cadastro.module').then( m => m.CadastroPageModule)
+  },
+
+
   
 
 
