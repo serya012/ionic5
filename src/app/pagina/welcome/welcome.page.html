@@ -1,0 +1,42 @@
+<!-- /src/app/pagina/welcome/welcome.page.html -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Bem-vindo ao App de Gerenciamento de Festas!
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div>
+    <h1>Seja bem-vindo!</h1>
+    <p>
+      O App de Gerenciamento de Festas é a solução perfeita para organizar seus eventos de maneira fácil e divertida.
+    </p>
+
+    <!-- Seção de instruções -->
+    <div *ngIf="showInstructionsSection">
+      <h2>Como funciona</h2>
+      <p>
+        Aqui estão algumas instruções para ajudar você a começar.
+      </p>
+      <!-- Adicione mais informações ou elementos conforme necessário -->
+
+      <!-- Botão para pular instruções e ir para autenticação -->
+      <ion-button expand="full" (click)="skipInstructions()">Pular Instruções</ion-button>
+    </div>
+
+    <!-- Seção de autenticação -->
+    <div *ngIf="showAuthenticationSection">
+      <h2>Crie uma conta ou entre</h2>
+      <p>
+        Para aproveitar ao máximo o aplicativo, crie uma conta ou entre com sua conta existente.
+      </p>
+
+      <!-- Botões para autenticação -->
+      <ion-button expand="full" (click)="login()">Entrar</ion-button>
+      <ion-button expand="full" (click)="createAccount()">Criar Conta</ion-button>
+    </div>
+  </div>
+</ion-content>
