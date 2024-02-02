@@ -9,6 +9,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'home',
+    loadChildren: () => import('./pagina/home/home.module').then( m => m.HomePageModule)
+  },
+  {
     path: 'evento',
     loadChildren: () => import('./pagina/evento/evento.module').then(m => m.EventoPageModule)
   },
@@ -26,7 +30,12 @@ const routes: Routes = [
   },
   {
     path: 'configuracao',
-    loadChildren: () => import('./pagina/configuracao/configuracao.module').then(m => m.ConfiguracaoPageModule)
+    loadChildren: () => import('./pagina/configuracao/configuracao.module').then(m => m.ConfiguracaoPageModule),
+    data: {
+      menuOptions: {
+        maxEdgeStart: 200 // Ajuste conforme necessário
+      }
+    }
   },
   {
     path: 'orcamentod',

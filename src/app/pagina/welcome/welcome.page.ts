@@ -1,7 +1,6 @@
-// /src/app/pagina/welcome/welcome.page.ts
-
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-welcome',
@@ -9,10 +8,52 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./welcome.page.scss'],
 })
 export class WelcomePage {
-  constructor(private navCtrl: NavController) {}
+  welcomeMessages: any[] = [
+    {
+      title: 'Bem-vindo ao App de Gerenciamento de Festas!',
+      description: 'Organize seus eventos de maneira fácil e divertida.',
+    },
+    {
+      title: 'Outra mensagem de boas-vindas',
+      description: 'Esta é outra mensagem interessante.',
+    },
+    {
+      title: 'Outra mensagem defefefef boas-vindas',
+      description: 'Esta é outra mensagem interessante.',
+    },
+    {
+      title: 'Outra mensagem de boas-vindas',
+      description: 'Esta é outra mendfdfsagem interessante.',
+    },
+    {
+      title: 'Outra mensagem de boas-vindas',
+      description: 'Esta é outra mensagdfgdfdfgem interessante.',
+    },
+    // Adicione mais mensagens conforme necessário
+  ];
+
+  currentMessageIndex: number = 0;
+  welcomeMessage: any = this.welcomeMessages[this.currentMessageIndex];
+
+  constructor(private menuController: MenuController, private router: Router) {}
+
+  ionViewWillEnter() {
+    // Desativar o menu lateral enquanto estiver na página de boas-vindas
+    this.menuController.enable(false);
+  }
+
+  ionViewWillLeave() {
+    // Reativar o menu lateral ao sair da página de boas-vindas
+    this.menuController.enable(true);
+  }
 
   skipWelcome() {
-    // Adicione a lógica para redirecionar para a próxima página (por exemplo, a página principal)
-    this.navCtrl.navigateForward('/home');
+    if (this.currentMessageIndex < this.welcomeMessages.length - 1) {
+      this.currentMessageIndex++;
+      this.welcomeMessage = this.welcomeMessages[this.currentMessageIndex];
+    } else {
+      // Navegar para a página "home"
+      this.router.navigate(['/home']);
+    }
   }
 }

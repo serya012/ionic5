@@ -1,12 +1,21 @@
 ion-content {
-    position: relative;
-  }
-  
-  .custom-icon {
-    position: absolute;
-    bottom: 16px; /* Ajuste conforme necessário para a distância do fundo */
-    right: 16px; /* Ajuste conforme necessário para a distância da direita */
-    font-size: 54px; /* Tamanho médio, ajuste conforme necessário */
-    cursor: pointer;
-  }
-  
+  position: relative;
+}
+
+.custom-icon {
+  position: absolute;
+  bottom: 16px;
+  /* Ajuste conforme necessário para a distância do fundo */
+  right: 16px;
+  /* Ajuste conforme necessário para a distância da direita */
+  font-size: 54px;
+  /* Tamanho médio, ajuste conforme necessário */
+  cursor: pointer;
+}
+
+/* /src/app/pagina/welcome/welcome.page.css */
+
+ion-menu {
+  --ion-menu-max-edge-start: 100px;
+  /* Ajuste conforme necessário */
+}

@@ -1,21 +1,19 @@
 <!-- /src/app/pagina/welcome/welcome.page.html -->
-
 <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-title class="ion-text-center">Bem-vindo</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content [fullscreen]="true" class="ion-padding">
-    <ion-img src="assets/img/welcome-image.jpg" alt="Boas-vindas"></ion-img>
-  
-    <ion-card>
-      <ion-card-content class="ion-text-center">
-        <h3>Bem-vindo ao App de Gerenciamento de Festas!</h3>
-        <p>Organize seus eventos de maneira fácil e divertida.</p>
-      </ion-card-content>
-    </ion-card>
-  
-    <ion-button expand="full" (click)="skipWelcome()">Pular Boas-vindas</ion-button>
-  </ion-content>
-  
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Bem-vindo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-img src="assets/img/projeto.jpg" alt="Boas-vindas" class="welcome"></ion-img>
+
+  <ion-card>
+    <ion-card-content class="ion-text-center">
+      <h3>{{ welcomeMessage.title }}</h3>
+      <p>{{ welcomeMessage.description }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" (click)="skipWelcome()">Avançar</ion-button>
+</ion-content>
