@@ -26,16 +26,7 @@ export class ConfiguracaoPage implements OnInit {
     this.router.navigate(['/']);
   }
 
-  async informacao() {
-    const alert = await this.alertController.create({
-      header: 'Informações',
-      message: 'Aqui estão as informações que você deseja mostrar.',
-      buttons: ['OK']
-    });
-
-    await alert.present();
-  }
-
+  
   async alterarConta() {
     const alert = await this.alertController.create({
       header: 'Alterar Email',
