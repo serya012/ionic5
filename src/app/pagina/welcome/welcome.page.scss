@@ -1,3 +1,5 @@
+/* /src/app/pagina/welcome/welcome.page.scss */
+
 .welcome {
     width: 75%;
     height: auto;
@@ -6,35 +8,35 @@
     margin: 0 auto;
 }
 
-/* /src/app/pagina/welcome/welcome.page.scss */
-
 ion-content {
     font-size: 18px;
-    /* Tamanho da fonte para todo o conteúdo da página */
 }
 
 ion-card-content {
     font-size: 8px;
-    /* Tamanho da fonte específico para o conteúdo do ion-card */
     font-weight: bold;
-    /* Pode adicionar negrito ou outras propriedades de estilo de fonte aqui */
 }
 
 h3 {
     font-size: 3em;
-    /* Tamanho da fonte específico para títulos h3 */
     color: #ffffff;
-    /* Cor do texto, substitua pela cor desejada */
 }
 
 p {
     font-size: 10px;
-    /* Tamanho da fonte específico para parágrafos */
     color: #333;
-    /* Cor do texto, substitua pela cor desejada */
 }
 
-.highlight-text {
+.custom-title {
+    color: #9000ff; // Cor específica para a palavra "Minha Festa"
+}
+
+.white-text {
+    color: #ffffff;
+    /* ou qualquer cor desejada para o texto branco */
+}
+
+.purple-text {
     color: #9000ff;
-    /* Cor específica para a palavra "Minha Festa" */
+    /* ou qualquer cor desejada para o texto roxo */
 }

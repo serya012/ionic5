@@ -1,3 +1,4 @@
+// /src/app/pagina/welcome/welcome.page.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
@@ -12,22 +13,14 @@ export class WelcomePage {
     {
       title: 'Seja bem-vindo a Minha Festa, ou melhor, a sua Festa 😉',
       description: 'O mais novo aplicativo inovador para você gerenciar e personalizar as suas festas com seus companheiros',
+      titleClass: 'custom-title',
+      descriptionClass: 'custom-description',
     },
     {
-      title: 'Outra mensagem de boas-vindas',
-      description: 'Esta é outra mensagem interessante.',
-    },
-    {
-      title: 'Outra mensagem defefefef boas-vindas',
-      description: 'Esta é outra mensagem interessante.',
-    },
-    {
-      title: 'Outra mensagem de boas-vindas',
-      description: 'Esta é outra mendfdfsagem interessante.',
-    },
-    {
-      title: 'Outra mensagem de boas-vindas',
-      description: 'Esta é outra mensagdfgdfdfgem interessante.',
+      title2: 'Outra mensagem de boas-vindas',
+      description2: 'Esta é outra mensagem interessante.',
+      titleClass: 'other-title',
+      descriptionClass: 'other-description',
     },
     // Adicione mais mensagens conforme necessário
   ];
@@ -35,24 +28,21 @@ export class WelcomePage {
   currentMessageIndex: number = 0;
   welcomeMessage: any = this.welcomeMessages[this.currentMessageIndex];
 
-  constructor(private menuController: MenuController, private router: Router) {}
+  constructor(private menuController: MenuController, private router: Router) { }
 
   ionViewWillEnter() {
-    // Desativar o menu lateral enquanto estiver na página de boas-vindas
     this.menuController.enable(false);
   }
 
   ionViewWillLeave() {
-    // Reativar o menu lateral ao sair da página de boas-vindas
     this.menuController.enable(true);
   }
 
-  skipWelcome() {
+  Avancar() {
     if (this.currentMessageIndex < this.welcomeMessages.length - 1) {
       this.currentMessageIndex++;
       this.welcomeMessage = this.welcomeMessages[this.currentMessageIndex];
     } else {
-      // Navegar para a página "home"
       this.router.navigate(['/home']);
     }
   }
