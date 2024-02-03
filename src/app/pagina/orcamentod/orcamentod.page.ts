@@ -48,8 +48,11 @@ export class OrcamentodPage {
   }
 
   selecionarTodos(opcoes: any[]) {
+    const algumNaoSelecionado = opcoes.some(opcao => !opcao.selecionado);
+  
     for (const opcao of opcoes) {
-      opcao.selecionado = true;
+      opcao.selecionado = algumNaoSelecionado;
     }
   }
+  
 }
