@@ -1,6 +1,6 @@
 <!-- configuracao.page.html -->
 
-<ion-header >
+<ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -17,19 +17,17 @@
   </ion-header>
 
   <ion-list>
-    <!-- Botões para diferentes configurações -->
-    <ion-item (click)="entrar()">
+    <!-- Botões estilizados para diferentes configurações -->
+    <ion-item (click)="entrar()" class="custom-button">
       <ion-label>Entrar</ion-label>
     </ion-item>
 
-    <ion-item (click)="sair()">
+    <ion-item (click)="sair()" class="custom-button">
       <ion-label>Sair da Conta</ion-label>
     </ion-item>
 
-    
-
-    <ion-item (click)="alterarConta()">
-      <ion-label>Alterar email</ion-label>
+    <ion-item (click)="alterarConta()" class="custom-button">
+      <ion-label>Alterar e-mail</ion-label>
     </ion-item>
   </ion-list>
 
