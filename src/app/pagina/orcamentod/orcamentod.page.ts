@@ -1,6 +1,8 @@
 // orcamentod.page.ts
 
 import { Component } from '@angular/core';
+import { NavController, AlertController } from '@ionic/angular';
+import { SharedService } from '../../shared.service';
 
 @Component({
   selector: 'app-orcamentod',
@@ -43,6 +45,12 @@ export class OrcamentodPage {
     // Adicione mais opções conforme necessário
   ];
 
+  constructor(
+    private navCtrl: NavController,
+    private alertController: AlertController,
+    private sharedService: SharedService
+  ) {}
+
   mostrarOpcoes(categoria: string) {
     this.categoriaSelecionada = this.categoriaSelecionada !== categoria ? categoria : null;
   }
@@ -54,5 +62,33 @@ export class OrcamentodPage {
       opcao.selecionado = algumNaoSelecionado;
     }
   }
-  
+
+  salvarItens() {
+    const selectedOptions: any[] = this.collectSelectedOptions();
+    this.sharedService.addOptions(selectedOptions);
+    this.mostrarAlerta('Salvo', 'Itens salvos com sucesso.');
+    this.navCtrl.navigateBack('/orcamento'); // Adiciona essa linha para voltar para a página de orcamento após salvar
+  }
+
+  collectSelectedOptions(): any[] {
+    const selectedOptions: any[] = [];
+
+    [this.opcoesBolos, this.opcoesBebidas, this.opcoesDecoracao, this.opcoesComidas].forEach(opcoesCategoria => {
+      opcoesCategoria.filter(opcao => opcao.selecionado).forEach(opcao => {
+        selectedOptions.push(opcao);
+      });
+    });
+
+    return selectedOptions;
+  }
+
+  async mostrarAlerta(header: string, message: string) {
+    const alert = await this.alertController.create({
+      header: header,
+      message: message,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
 }
