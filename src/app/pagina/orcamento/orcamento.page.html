@@ -1,3 +1,5 @@
+<!-- orcamento.page.html -->
+
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
@@ -25,6 +27,12 @@
     <ion-label>Pago</ion-label>
     <ion-input type="number" [(ngModel)]="orcamento"></ion-input>
   </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-label>{{ item.nome }} - Preço: {{ item.preco }}</ion-label>
+    </ion-item>
+  </ion-list>
 
   <ion-button expand="block" (click)="salvar()">Salvar</ion-button>
 </ion-content>
