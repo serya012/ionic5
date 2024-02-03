@@ -51,7 +51,11 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./pagina/home/home.module').then( m => m.HomePageModule)
+  },  {
+    path: 'historicoeve',
+    loadChildren: () => import('./pagina/historicoeve/historicoeve.module').then( m => m.HistoricoevePageModule)
   },
+
 
 
   
