@@ -1,19 +1,21 @@
 <!-- /src/app/pagina/welcome/welcome.page.html -->
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title class="ion-text-center">Bem-vindo</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true" class="ion-padding">
   <ion-img src="assets/img/projeto.jpg" alt="Boas-vindas" class="welcome"></ion-img>
 
-  <ion-card>
+  <ion-card [ngClass]="welcomeMessage.titleClass">
     <ion-card-content class="ion-text-center">
-      <h3>Seja bem-vindo a <span class="highlight-text">Minha Festa</span>, ou melhor, a sua Festa 😉</h3>
-      <p>O mais novo aplicativo inovador para você gerenciar e personalizar as suas festas com seus companheiros</p>
+      <h3>
+        <span class="white-text">Seja bem-vindo a </span>
+        <span class="purple-text">Minha Festa</span>
+        <span class="white-text">, ou melhor, a sua Festa 😉</span>
+      </h3>
+      <h3 [ngClass]="welcomeMessage.titleClass">{{ welcomeMessage.title }}</h3>
+      <p [ngClass]="welcomeMessage.descriptionClass">{{ welcomeMessage.description }}</p>
+      <h3 [ngClass]="welcomeMessage.titleClass">{{ welcomeMessage.title2 }}</h3>
+      <p [ngClass]="welcomeMessage.descriptionClass">{{ welcomeMessage.description2 }}</p>
     </ion-card-content>
   </ion-card>
+  
 
-  <ion-button expand="full" (click)="skipWelcome()">Avançar</ion-button>
+  <ion-button expand="full" (click)="Avancar()">Avançar</ion-button>
 </ion-content>
