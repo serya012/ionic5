@@ -1,5 +1,8 @@
+// orcamento.page.ts
+
 import { Component } from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular';
+import { SharedService } from '../../shared.service';
 
 @Component({
   selector: 'app-orcamento',
@@ -9,10 +12,16 @@ import { NavController, AlertController } from '@ionic/angular';
 export class OrcamentoPage {
   gasto: string = '';
   orcamento: string = '';
+  items: any[] = []; // Adicione esta linha para declarar a variável items
 
-  constructor(private navCtrl: NavController, private alertController: AlertController) {}
+  constructor(private navCtrl: NavController, private alertController: AlertController, private sharedService: SharedService) {
+    this.items = this.sharedService.getOptions(); // Certifique-se de que os itens são buscados do SharedService
+  }
 
   async salvar() {
+    const selectedOptions = this.sharedService.getOptions();
+    console.log('Opções selecionadas em Orcamento:', selectedOptions);
+
     if (this.gasto && this.orcamento) {
       this.mostrarAlerta('Salvo', 'Os dados foram salvos com sucesso.');
     } else {
@@ -30,9 +39,7 @@ export class OrcamentoPage {
     await alert.present();
   }
 
-  // Adicione este método para a navegação
   orcamentod() {
-    // Substitua 'OrcaMendoPage' pelo nome real da sua página de destino
     this.navCtrl.navigateForward('/orcamentod');
   }
 }
