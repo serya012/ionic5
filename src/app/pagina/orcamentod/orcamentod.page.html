@@ -18,13 +18,13 @@
 
   <!-- Opções de compra para Bolos -->
   <ion-list class="opcoes-list" *ngIf="categoriaSelecionada === 'bolos'">
-    <ion-checkbox-group [(ngModel)]="opcoesBolos">
-      <ion-item *ngFor="let opcao of opcoesBolos">
-        <ion-label>{{ opcao.nome }} - Preço: {{ opcao.preco }}</ion-label>
-        <ion-checkbox slot="end" [(ngModel)]="opcao.selecionado"></ion-checkbox>
-      </ion-item>
-    </ion-checkbox-group>
-    <ion-button (click)="selecionarTodos(opcoesBolos)">Selecionar Todos</ion-button>
+    <ion-button (click)="selecionarTodos(opcoesBolos)">
+      Selecionar Todos
+    </ion-button>
+    <ion-item *ngFor="let opcao of opcoesBolos">
+      <ion-label>{{ opcao.nome }} - Preço: {{ opcao.preco }}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="opcao.selecionado"></ion-checkbox>
+    </ion-item>
   </ion-list>
 
   <!-- Botão para mostrar opções de Bebidas -->
@@ -34,13 +34,13 @@
 
   <!-- Opções de compra para Bebidas -->
   <ion-list class="opcoes-list" *ngIf="categoriaSelecionada === 'bebidas'">
-    <ion-checkbox-group [(ngModel)]="opcoesBebidas">
-      <ion-item *ngFor="let opcao of opcoesBebidas">
-        <ion-label>{{ opcao.nome }} - Preço: {{ opcao.preco }}</ion-label>
-        <ion-checkbox slot="end" [(ngModel)]="opcao.selecionado"></ion-checkbox>
-      </ion-item>
-    </ion-checkbox-group>
-    <ion-button (click)="selecionarTodos(opcoesBebidas)">Selecionar Todos</ion-button>
+    <ion-button (click)="selecionarTodos(opcoesBebidas)">
+      Selecionar Todos
+    </ion-button>
+    <ion-item *ngFor="let opcao of opcoesBebidas">
+      <ion-label>{{ opcao.nome }} - Preço: {{ opcao.preco }}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="opcao.selecionado"></ion-checkbox>
+    </ion-item>
   </ion-list>
 
   <!-- Botão para mostrar opções de Decoração -->
@@ -50,13 +50,13 @@
 
   <!-- Opções de compra para Decoração -->
   <ion-list class="opcoes-list" *ngIf="categoriaSelecionada === 'decoracao'">
-    <ion-checkbox-group [(ngModel)]="opcoesDecoracao">
-      <ion-item *ngFor="let opcao of opcoesDecoracao">
-        <ion-label>{{ opcao.nome }} - Preço: {{ opcao.preco }}</ion-label>
-        <ion-checkbox slot="end" [(ngModel)]="opcao.selecionado"></ion-checkbox>
-      </ion-item>
-    </ion-checkbox-group>
-    <ion-button (click)="selecionarTodos(opcoesDecoracao)">Selecionar Todos</ion-button>
+    <ion-button (click)="selecionarTodos(opcoesDecoracao)">
+      Selecionar Todos
+    </ion-button>
+    <ion-item *ngFor="let opcao of opcoesDecoracao">
+      <ion-label>{{ opcao.nome }} - Preço: {{ opcao.preco }}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="opcao.selecionado"></ion-checkbox>
+    </ion-item>
   </ion-list>
 
   <!-- Botão para mostrar opções de Comidas -->
@@ -66,13 +66,13 @@
 
   <!-- Opções de compra para Comidas -->
   <ion-list class="opcoes-list" *ngIf="categoriaSelecionada === 'comidas'">
-    <ion-checkbox-group [(ngModel)]="opcoesComidas">
-      <ion-item *ngFor="let opcao of opcoesComidas">
-        <ion-label>{{ opcao.nome }} - Preço: {{ opcao.preco }}</ion-label>
-        <ion-checkbox slot="end" [(ngModel)]="opcao.selecionado"></ion-checkbox>
-      </ion-item>
-    </ion-checkbox-group>
-    <ion-button (click)="selecionarTodos(opcoesComidas)">Selecionar Todos</ion-button>
+    <ion-button (click)="selecionarTodos(opcoesComidas)">
+      Selecionar Todos
+    </ion-button>
+    <ion-item *ngFor="let opcao of opcoesComidas">
+      <ion-label>{{ opcao.nome }} - Preço: {{ opcao.preco }}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="opcao.selecionado"></ion-checkbox>
+    </ion-item>
   </ion-list>
 
 </ion-content>

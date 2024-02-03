@@ -1,7 +1,6 @@
 // orcamentod.page.ts
 
 import { Component } from '@angular/core';
-import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-orcamentod',
@@ -13,34 +12,34 @@ export class OrcamentodPage {
   categoriaSelecionada: string | null = null;
 
   opcoesBolos = [
-    { nome: 'Bolo de Chocolate', preco: 'R$20', selecionado: false },
-    { nome: 'Bolo de Morango', preco: 'R$25', selecionado: false },
-    { nome: 'Bolo Red Velvet', preco: 'R$30', selecionado: false },
-    { nome: 'Bolo de Casamento', preco: 'R$50', selecionado: false },
+    { nome: 'Bolo de Chocolate', preco: 'R$50', selecionado: false },
+    { nome: 'Bolo de Morango', preco: 'R$60', selecionado: false },
+    { nome: 'Bolo de Coco', preco: 'R$45', selecionado: false },
+    { nome: 'Bolo de Baunilha', preco: 'R$55', selecionado: false },
     // Adicione mais opções conforme necessário
   ];
 
   opcoesBebidas = [
     { nome: 'Refrigerante', preco: 'R$5', selecionado: false },
     { nome: 'Suco Natural', preco: 'R$8', selecionado: false },
-    { nome: 'Coquetel de Frutas', preco: 'R$12', selecionado: false },
-    { nome: 'Champagne', preco: 'R$25', selecionado: false },
+    { nome: 'Coquetel', preco: 'R$10', selecionado: false },
+    { nome: 'Água Mineral', preco: 'R$3', selecionado: false },
     // Adicione mais opções conforme necessário
   ];
 
   opcoesDecoracao = [
-    { nome: 'Balões Coloridos', preco: 'R$15', selecionado: false },
-    { nome: 'Flores Naturais', preco: 'R$20', selecionado: false },
-    { nome: 'Decoração Vintage', preco: 'R$18', selecionado: false },
-    { nome: 'Decoração de Festa Tropical', preco: 'R$25', selecionado: false },
+    { nome: 'Balões Coloridos', preco: 'R$20', selecionado: false },
+    { nome: 'Velas Decorativas', preco: 'R$15', selecionado: false },
+    { nome: 'Centro de Mesa Floral', preco: 'R$30', selecionado: false },
+    { nome: 'Decoração com Fitas', preco: 'R$25', selecionado: false },
     // Adicione mais opções conforme necessário
   ];
 
   opcoesComidas = [
-    { nome: 'Pizza Margherita', preco: 'R$20', selecionado: false },
-    { nome: 'Sushi Variado', preco: 'R$30', selecionado: false },
-    { nome: 'Churrasco Gourmet', preco: 'R$25', selecionado: false },
-    { nome: 'Prato Vegetariano', preco: 'R$18', selecionado: false },
+    { nome: 'Mini Sanduíches', preco: 'R$40', selecionado: false },
+    { nome: 'Canapés Variados', preco: 'R$60', selecionado: false },
+    { nome: 'Finger Foods', preco: 'R$25', selecionado: false },
+    { nome: 'Petiscos Especiais', preco: 'R$35', selecionado: false },
     // Adicione mais opções conforme necessário
   ];
 
@@ -53,5 +52,4 @@ export class OrcamentodPage {
       opcao.selecionado = true;
     }
   }
-
 }
