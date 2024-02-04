@@ -86,8 +86,8 @@ O projeto possui a seguinte estrutura:
 
 ## Dependências
 
-- [Ionic](https://ionicframework.com/) ![Ionic](https://img.shields.io/badge/Ionic-5.0.0-brightgreen)
-- [Angular](https://angular.io/) ![Angular](https://img.shields.io/badge/Angular-11.0.0-brightgreen)
+- [Ionic](https://ionicframework.com/) ![Ionic](https://img.shields.io/badge/Ionic-7.7.0-brightgreen)
+- [Angular](https://angular.io/) ![Angular](https://img.shields.io/badge/Angular-17.1.0-brightgreen)
 
 ## Linguagens Usadas
 
