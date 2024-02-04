@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-button slot="end" (click)="novoUsuario()">Novo +</ion-button>
+    <ion-title>Usuários</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item-sliding *ngFor="let u of usuarios">
+      <ion-item-options side="start">
+        <ion-item-option color="danger" (click)="confirmarExclusao(u.id)">
+          <ion-icon name="trash"></ion-icon>
+          Deletar
+        </ion-item-option>
+        <ion-item-option color="warning" (click)="atualizarUsuario(u)">
+          <ion-icon name="createUsuario"></ion-icon>
+          Editar
+        </ion-item-option>
+      </ion-item-options>
+
+      <ion-item>
+        {{ u.id }} - {{ u.nome }}
+        <ion-button slot="end" color="warning" (click)="atualizarUsuario(u)">Editar</ion-button>
+        <ion-button slot="end" color="danger" (click)="confirmarExclusao(u.id)">Excluir</ion-button>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

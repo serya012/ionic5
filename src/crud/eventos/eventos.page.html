@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-button slot="end" (click)="novoEvento()">Novo +</ion-button>
+    <ion-title>Eventos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let evento of eventos">
+      <ion-label>{{ evento.id }} - {{ evento.nome }}</ion-label>
+      <ion-button color="warning" (click)="atualizarEvento(evento)">
+        <ion-icon name="create"></ion-icon> Editar
+      </ion-button>
+      <ion-button color="danger" (click)="confirmarExclusao(evento.id)">
+        <ion-icon name="trash"></ion-icon> Deletar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

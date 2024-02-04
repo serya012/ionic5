@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-button slot="end" (click)="fecharModal()">Fechar</ion-button>
+    <ion-title>{{ atualizarCliente ? 'Atualizar Cliente' : 'Novo Cliente' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form #f="ngForm" (ngSubmit)="enviando(f)">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input [(ngModel)]="dados.nome" name="nome" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="dados.email" name="email" type="email" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">CPF</ion-label>
+      <ion-input [(ngModel)]="dados.cpf" name="cpf" type="text" maxlength="12" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="dados.senha" name="senha" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nível</ion-label>
+      <ion-input [(ngModel)]="dados.nivel2" name="nivel2"></ion-input>
+    </ion-item>
+    <ion-button fill="outline" expand="block" type="submit">{{ atualizarCliente ? 'Atualizar Cliente' : 'Cadastrar Cliente' }}</ion-button>
+  </form>
+</ion-content>

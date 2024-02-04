@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Avaliação</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="fecharModal()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form #f="ngForm" (ngSubmit)="enviando(f)">
+    <ion-item>
+      <ion-label>Comentários:</ion-label>
+      <ion-textarea [(ngModel)]="dados.comentario" name="comentario" placeholder="Deixe seus comentários aqui"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Avaliação</ion-label>
+      <div class="star-rating">
+        <ion-icon *ngFor="let star of stars" 
+                  name="star" 
+                  [class.active]="star <= avaliacao"
+                  (click)="setRating(star)">
+        </ion-icon>
+      </div>
+      <input type="hidden" [(ngModel)]="dados.avaliacao" name="avaliacao">
+    </ion-item>
+
+    <ion-button expand="full" color="primary" type="submit">Enviar Feedback</ion-button>
+  </form>
+</ion-content>

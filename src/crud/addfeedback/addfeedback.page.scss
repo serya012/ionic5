@@ -1,0 +1,22 @@
+/* Adicione estas regras ao seu arquivo de estilo (por exemplo, styles.scss) */
+
+.star-rating ion-icon {
+    font-size: 1.9em; /* Ajuste o tamanho conforme necessário */
+    color: #757575; /* Cor padrão das estrelas */
+  }
+  
+  .star-rating ion-icon.active {
+    color: #9000ff; /* Cor das estrelas ativas, ajuste conforme necessário */
+  }
+  ion-content {
+    position: relative;
+  }
+  
+  .custom-icon {
+    position: absolute;
+    bottom: 16px; /* Ajuste conforme necessário para a distância do fundo */
+    right: 16px; /* Ajuste conforme necessário para a distância da direita */
+    font-size: 54px; /* Tamanho médio, ajuste conforme necessário */
+    cursor: pointer;
+  }
+  

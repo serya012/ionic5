@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-button slot="end" (click)="novoFeedback()">Novo +</ion-button>
+    <ion-title>Feedbacks</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let feedback of feedbacks">
+      <ion-label>
+        <h2>Avaliação: {{ feedback.avaliacao }}</h2>
+        <p>Comentário: {{ feedback.comentario }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

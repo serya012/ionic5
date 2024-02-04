@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{ atualizarEvento ? 'Atualizar Evento' : 'Novo Evento' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="fecharModal()">
+      <ion-icon name="close"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <form #f="ngForm" (ngSubmit)="enviando(f)">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input [(ngModel)]="dados.nome" name="nome" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Data</ion-label>
+      <ion-input [(ngModel)]="dados.data" name="data" type="date" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Horário de Entrada</ion-label>
+      <ion-input [(ngModel)]="dados.horario_entrada" name="horario_entrada" type="time" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Horário de Saída</ion-label>
+      <ion-input [(ngModel)]="dados.horario_saida" name="horario_saida" type="time" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Local</ion-label>
+      <ion-input [(ngModel)]="dados.local" name="local" required></ion-input>
+    </ion-item>
+    <ion-button fill="outline" expand="block" type="submit">{{ atualizarEvento ? 'Atualizar Evento' : 'Cadastrar Evento' }}</ion-button>
+  </form>
+
+</ion-content>
