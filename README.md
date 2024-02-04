@@ -1,6 +1,7 @@
-# App de Gerenciamento de Eventos e Festas
 
-Este é um aplicativo baseado no framework Ionic, projetado para proporcionar uma experiência completa de gerenciamento de eventos e festas. Ele oferece funcionalidades como agendamento de eventos, criação de eventos personalizados, listas de tarefas para comidas, pacotes de buffet, mapas de eventos e perfis de usuários.
+# Minha Festa - App de Gerenciamento de Eventos e Festas
+
+Seja bem-vindo a **Minha Festa**, ou melhor, a sua Festa 😉. O seu aplicativo completo de gerenciamento de eventos e festas.  Explore os recursos incríveis que oferecemos para tornar seus eventos ainda mais especiais!
 
 ## Índice
 
@@ -98,4 +99,7 @@ Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 ---
 
-Adicionei mais conteúdo ao README.md, incluindo informações sobre a estrutura de pastas do projeto. Se precisar de mais ajustes ou se houver algo específico que gostaria de incluir, por favor, me avise!
+**Seja bem-vindo a Minha Festa, ou melhor, a sua Festa 😉**
+```
+
+Agora, o README.md inclui uma mensagem de boas-vindas na seção de introdução. Fique à vontade para sugerir mais ajustes ou adições!
