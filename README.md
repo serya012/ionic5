@@ -1,6 +1,3 @@
-Claro! Vamos adicionar um tópico "Linguagens Usadas" ao README.md:
-
-```markdown
 # Minha Festa - App de Gerenciamento de Eventos e Festas
 
 Seja bem-vindo a **Minha Festa**, ou melhor, a sua Festa 😉. O seu aplicativo completo de gerenciamento de eventos e festas.  Explore os recursos incríveis que oferecemos para tornar seus eventos ainda mais especiais!
