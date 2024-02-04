@@ -1,4 +1,6 @@
+Claro! Vamos adicionar um tópico "Linguagens Usadas" ao README.md:
 
+```markdown
 # Minha Festa - App de Gerenciamento de Eventos e Festas
 
 Seja bem-vindo a **Minha Festa**, ou melhor, a sua Festa 😉. O seu aplicativo completo de gerenciamento de eventos e festas.  Explore os recursos incríveis que oferecemos para tornar seus eventos ainda mais especiais!
@@ -12,6 +14,7 @@ Seja bem-vindo a **Minha Festa**, ou melhor, a sua Festa 😉. O seu aplicativo 
 - [Uso](#uso)
 - [Estrutura de Pastas](#estrutura-de-pastas)
 - [Dependências](#dependências)
+- [Linguagens Usadas](#linguagens-usadas)
 - [Contribuição](#contribuição)
 - [Licença](#licença)
 
@@ -86,8 +89,15 @@ O projeto possui a seguinte estrutura:
 
 ## Dependências
 
-- [Ionic](https://ionicframework.com/)
-- [Angular](https://angular.io/)
+- [Ionic](https://ionicframework.com/) ![Ionic](https://img.shields.io/badge/Ionic-5.0.0-brightgreen)
+- [Angular](https://angular.io/) ![Angular](https://img.shields.io/badge/Angular-11.0.0-brightgreen)
+
+## Linguagens Usadas
+
+- **TypeScript**
+- **HTML**
+- **SCSS**
+- **PHP**
 
 ## Contribuição
 
@@ -102,4 +112,4 @@ Este projeto está licenciado sob a [Licença MIT](LICENSE).
 **Seja bem-vindo a Minha Festa, ou melhor, a sua Festa 😉**
 ```
 
-Agora, o README.md inclui uma mensagem de boas-vindas na seção de introdução. Fique à vontade para sugerir mais ajustes ou adições!
+Agora o README.md inclui um tópico "Linguagens Usadas" com as principais linguagens do projeto. Caso haja mais alguma coisa que gostaria de adicionar, é só dizer!
