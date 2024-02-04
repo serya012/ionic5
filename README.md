@@ -55,3 +55,47 @@ Execute o aplicativo localmente:
 
 ```bash
 ionic serve
+```
+
+Isso iniciará o servidor de desenvolvimento do Ionic, e você poderá acessar o aplicativo em `http://localhost:8100/`.
+
+### Estrutura de Pastas
+
+O projeto possui a seguinte estrutura:
+
+```
+/src
+  /app
+    /home
+    /pagina
+      /usuarios
+      /addusuario
+      /clientes
+      /addcliente
+      /feedback
+      /addfeedback
+      /eventos
+      /addevento
+  /servico
+```
+
+- `home`: Contém componentes relacionados ao módulo home.
+- `pagina`: Contém componentes para os módulos de usuário, cliente, feedback e eventos.
+- `servico`: Contém serviços Ionic para manipulação de dados.
+
+## Dependências
+
+- [Ionic](https://ionicframework.com/)
+- [Angular](https://angular.io/)
+
+## Contribuição
+
+Contribuições são bem-vindas! Por favor, abra uma issue ou crie um pull request.
+
+## Licença
+
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
+
+---
+
+Adicionei mais conteúdo ao README.md, incluindo informações sobre a estrutura de pastas do projeto. Se precisar de mais ajustes ou se houver algo específico que gostaria de incluir, por favor, me avise!
