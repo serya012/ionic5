@@ -95,6 +95,8 @@ O projeto possui a seguinte estrutura:
 - **HTML**
 - **SCSS**
 - **PHP**
+- **MYSQL**
+-**
 
 ## Contribuição
 
