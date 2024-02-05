@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar >
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -12,7 +12,7 @@
     <!-- Seção de Informações Pessoais -->
     <ion-card color="light">
       <ion-card-header>
-        <ion-title class="ion-text-dark">Informações Pessoais</ion-title>
+        <ion-title>Informações Pessoais</ion-title>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
@@ -52,13 +52,15 @@
           <ion-avatar>
             <ion-icon name="person-sharp" class="avatar-icon"></ion-icon>
           </ion-avatar>
-          <ion-label class="ion-text-dark">Escolher Foto:</ion-label>
-          <ion-button color="secondary" (click)="selecionarFoto()">Escolher</ion-button>
+          <ion-label>Escolher Foto:</ion-label>
+          <ion-button class="escolher" (click)="selecionarFoto()">Escolher</ion-button>
         </ion-item>
       </ion-card-content>
     </ion-card>
 
     <!-- Botão Entrar -->
-    <ion-button expand="full" color="success" (click)="entrar()">Entrar</ion-button>
+    <div class="ion-text-center">
+    <ion-button (click)="entrar()">entrar</ion-button>
+    </div>
   </div>
 </ion-content>

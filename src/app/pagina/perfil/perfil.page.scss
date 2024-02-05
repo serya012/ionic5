@@ -1,29 +1,70 @@
+ion-toolbar {
+  background: #9000ff;
+  /* roxo */
+  color: #ffffff;
+  /* branco */
+}
 
-  ion-toolbar {
-    --background: #6200ee; /* roxo */
-    --color: #ffffff; /* branco */
-  }
+ion-content {
+  background: white;
+}
 
-  ion-content {
-    --background: white;
-  }
+ion-iten {
+  background-color: white;
+  /* branco */
+  border-radius: 80px;
+}
 
-  ion-card {
-    background-color: transparent; /* torna o ion-card transparente */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  
-    ion-card-header {
-      color: #6200ee; /* roxo */
-      font-size: 1.2em;
-      font-weight: bold;
-    }
-  }
+ion-card {
+  --background-color: transparent;
+  /* torna o ion-card transparente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 
-  ion-icon {
-    position: left;
-    right: 20px; /* ajuste a posição conforme necessário */
-    top: 50%;
-    transform: translateY(50%);
-    
+  ion-card-header {
+    color: #9000ff;
+    /* roxo */
+    font-size: 1.2em;
+    font-weight: bold;
   }
+}
+
+ion-icon {
+  position: left;
+  right: 20px;
+  /* ajuste a posição conforme necessário */
+  top: 50%;
+  transform: translateY(50%);
+
+}
+
+/* Estilo padrão do ion-button */
+ion-button {
+  --background: var(--ion-color-roxo);
+  --border-radius: 16em;
+  border-radius: 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 50px;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+/* Estilo para a classe .escolher */
+ion-button.escolher {
+  --background: var(--ion-color-success-tint);
+  float: right;
+  margin-bottom: 20px;
+}
+
+.ion-text-center {
+  display: flez;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: auto;
+
+}
