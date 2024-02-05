@@ -56,21 +56,9 @@
     }
   }
   
-  ion-avatar {
-    background-color: #6200ee; /* roxo */
-    color: #ffffff; /* branco */
-  }
   
-  ion-button {
-    background-color: #6200ee; /* roxo */
-    color: #ffffff; /* branco */
-    margin-top: 20px;
-    padding: 10px 20px;
   
-    &:hover {
-      background-color: #4b0271; /* roxo mais escuro */
-    }
-  }
+  
   
   @media (max-width: 768px) {
     .ion-padding {
