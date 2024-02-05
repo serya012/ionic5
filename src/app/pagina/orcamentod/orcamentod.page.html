@@ -23,7 +23,7 @@
     </ion-button>
     <ion-item *ngFor="let opcao of opcoesBolos">
       <ion-label>{{ opcao.nome }} - Preço: {{ opcao.preco }}</ion-label>
-      <ion-checkbox slot="end" [(ngModel)]="opcao.selecionado"></ion-checkbox>
+      <ion-checkbox slot="start" [(ngModel)]="opcao.selecionado"></ion-checkbox>
     </ion-item>
   </ion-list>
 
