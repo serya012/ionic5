@@ -1,0 +1,29 @@
+
+  ion-toolbar {
+    --background: #6200ee; /* roxo */
+    --color: #ffffff; /* branco */
+  }
+
+  ion-content {
+    --background: white;
+  }
+
+  ion-card {
+    background-color: transparent; /* torna o ion-card transparente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  
+    ion-card-header {
+      color: #6200ee; /* roxo */
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  }
+
+  ion-icon {
+    position: left;
+    right: 20px; /* ajuste a posição conforme necessário */
+    top: 50%;
+    transform: translateY(50%);
+    
+  }
