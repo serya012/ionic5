@@ -1,4 +1,20 @@
 /* Adicione estas regras ao seu arquivo de estilo (por exemplo, styles.scss) */
+ion-toolbar {
+  --background: var(--ion-color-roxo);
+  /* roxo */
+  color:#ffffff;
+  /* branco */
+}
+
+ion-content {
+  background: white;
+}
+
+ion-iten {
+  background-color: white;
+  /* branco */
+  border-radius: 80px;
+}
 
 .star-rating ion-icon {
   font-size: 1.9em; /* Ajuste o tamanho conforme necessário */
@@ -18,4 +34,24 @@ ion-content {
   right: 16px; /* Ajuste conforme necessário para a distância da direita */
   font-size: 54px; /* Tamanho médio, ajuste conforme necessário */
   cursor: pointer;
+}
+
+ion-button {
+  --background: var(--ion-color-roxo);
+  --border-radius: 16em;
+  border-radius: 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 50px;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+ion-button.enviarFeedback {
+  --background: var(--ion-color-success-tint);
+  float: right;
+  margin-bottom: 20px;
 }
