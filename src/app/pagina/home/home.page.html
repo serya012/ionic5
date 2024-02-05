@@ -1,6 +1,6 @@
 <!-- home.page.html -->
 <ion-header [translucent]="true">
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -10,28 +10,28 @@
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
+    <ion-toolbar color="roxo">
       <ion-title size="large">Home</ion-title>
     </ion-toolbar>
   </ion-header>
-<ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-card-header>
-      Sugestões de Compra
-    </ion-card-header>
-    <ion-card-content>
-      <ion-button expand="block" routerLink="/orcamentod">Montar Orçamento</ion-button>
-    </ion-card-content>
-  </ion-card>
+  <ion-content [fullscreen]="true">
+    <ion-card>
+      <ion-card-header>
+        Sugestões de Compra
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button expand="block" routerLink="/orcamentod">Montar Orçamento</ion-button>
+      </ion-card-content>
+    </ion-card>
 
-  <ion-card>
-    <ion-card-header>
-      cadastro
-    </ion-card-header>
-    <ion-card-content>
-      <ion-button expand="block" routerLink="/perfil">cadastro</ion-button>
-    </ion-card-content>
-  </ion-card>
+    <ion-card>
+      <ion-card-header>
+        cadastro
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button expand="block" routerLink="/perfil">cadastro</ion-button>
+      </ion-card-content>
+    </ion-card>
 
-  <!-- Adicione mais cartões conforme necessário para outras funcionalidades -->
-</ion-content>
+    <!-- Adicione mais cartões conforme necessário para outras funcionalidades -->
+  </ion-content>

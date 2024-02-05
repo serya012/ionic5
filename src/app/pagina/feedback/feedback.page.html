@@ -1,15 +1,15 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Avaliação</ion-title>
+    <ion-title color="roxo" class="ion-text-center">Avaliação</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
+    <ion-toolbar color="roxo">
       <ion-title size="large">Feedback</ion-title>
     </ion-toolbar>
   </ion-header>
@@ -25,10 +25,8 @@
         <ion-item>
           <ion-label>Avaliação</ion-label>
           <div class="star-rating">
-            <ion-icon *ngFor="let star of stars" 
-                      name="star" 
-                      [class.active]="star <= avaliacao"
-                      (click)="setRating(star)">
+            <ion-icon *ngFor="let star of stars" name="star" [class.active]="star <= avaliacao"
+              (click)="setRating(star)">
             </ion-icon>
           </div>
         </ion-item>
@@ -44,6 +42,5 @@
   </div>
 </ion-content>
 <ion-content class="ion-padding">
- 
-</ion-content>
 
+</ion-content>
