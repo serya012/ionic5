@@ -1,3 +1,5 @@
+/* src/app/pagina/perfil/perfil.page.scss */
+
 ion-menu ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #fff));
 }
@@ -49,19 +51,27 @@ ion-menu.md ion-item {
   border-radius: 4px;
 }
 
-ion-menu.md ion-item.selected {
-  --background: rgba(var(--ion-color-primary-rgb), 0.14);
+ion-menu.md ion-item:hover {
+  --background: #9000ff; /* Alteração de cor para #90000ff no hover */
+  color: #fff; /* Alteração da cor do texto para branco no hover */
 }
 
-ion-menu.md ion-item.selected ion-icon {
-  color: var(--ion-color-primary);
+ion-menu.md ion-item.selected {
+  --background: rgba(144, 0, 255, 0.5); /* Ajuste a transparência conforme necessário */
+  color: #fff;
 }
 
 ion-menu.md ion-item ion-icon {
-  color: #616e7e;
+  color: #9000ff; /* Cor do ícone normal */
+}
+
+ion-menu.md ion-item:hover ion-icon,
+ion-menu.md ion-item.selected ion-icon {
+  color: #fff; /* Cor do ícone no hover e no item selecionado */
 }
 
 ion-menu.md ion-item ion-label {
+  color: #fff; /* Cor do texto */
   font-weight: 500;
 }
 
@@ -90,7 +100,7 @@ ion-menu.ios ion-item.selected ion-icon {
 
 ion-menu.ios ion-item ion-icon {
   font-size: 24px;
-  color: #73849a;
+  color: #9000ff;
 }
 
 ion-menu.ios ion-list#labels-list ion-list-header {

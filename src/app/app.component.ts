@@ -12,6 +12,7 @@ export class AppComponent {
     { title: 'Eventos', url: 'evento', icon: 'balloon' }, // Use Bootstrap icon class here
     { title: 'Orcamento', url: 'orcamento', icon: 'cash' },
     { title: 'Feedback', url: 'feedback', icon: 'star' },
+    { title: 'Login', url: 'login', icon: 'log-in' },
     { title: 'Perfil', url: 'perfil', icon: 'person' },
     { title: 'Configuracao', url: 'configuracao', icon: 'settings' },
     

@@ -1,3 +1,5 @@
+<!-- src/app/pagina/perfil/perfil.page.html -->
+
 <ion-header [translucent]="true">
   <ion-toolbar color="roxo">
     <ion-buttons slot="start">
@@ -7,60 +9,36 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <div class="ion-padding">
-    <!-- Seção de Informações Pessoais -->
-    <ion-card color="">
-      <ion-card-header>
-        <ion-title>Informações Pessoais</ion-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item>
-          <ion-label class="ion-text-dark">Nome:</ion-label>
-          <ion-input placeholder="Digite seu nome completo"></ion-input>
-        </ion-item>
+<ion-content class="ion-padding">
 
-        <ion-item>
-          <ion-label class="ion-text-dark">CPF:</ion-label>
-          <ion-input placeholder="Digite seu CPF" maxlength="14" type="tel"></ion-input>
-        </ion-item>
+  <!-- Seção de Foto de Perfil -->
+  <ion-item>
+    <ion-avatar slot="start">
+      <img [src]="fotoPerfil || 'assets/img/default-profile-pic.jpg'">
+    </ion-avatar>
+    <ion-label>
+      <h2>Foto de Perfil</h2>
+      <!-- REMOVIDO: <p (click)="changeProfilePicture()">Trocar Foto</p> -->
+    </ion-label>
+  </ion-item>
 
-        <ion-item>
-          <ion-label class="ion-text-dark">Email:</ion-label>
-          <ion-input type="email" placeholder="Digite seu email"></ion-input>
-        </ion-item>
+  <!-- Seção de Email -->
+  <ion-item>
+    <ion-label>Email:</ion-label>
+    <ion-input [(ngModel)]="userEmail"></ion-input>
+    <ion-button size="small" (click)="changeEmail()">Trocar Email</ion-button>
+  </ion-item>
 
-        <ion-item>
-          <ion-label class="ion-text-dark">Senha:</ion-label>
-          <ion-input type="password" placeholder="Digite sua senha"></ion-input>
-        </ion-item>
+  <!-- Seção de Senha -->
+  <ion-item>
+    <ion-label>Senha:</ion-label>
+    <ion-input type="password" [(ngModel)]="userPassword"></ion-input>
+    <ion-button size="small" (click)="changePassword()">Trocar Senha</ion-button>
+  </ion-item>
 
-        <ion-item>
-          <ion-label class="ion-text-dark">Nível:</ion-label>
-          <ion-input placeholder="Digite seu nível"></ion-input>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
+  <!-- Opção "Esqueci a Senha" -->
+  <ion-item (click)="forgotPassword()">
+    <ion-label>Esqueci a Senha</ion-label>
+  </ion-item>
 
-    <!-- Seção de Foto de Perfil -->
-    <ion-card color="">
-      <ion-card-header>
-        <ion-title class="ion-text-dark">Foto de Perfil</ion-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item>
-          <ion-avatar>
-            <ion-icon name="person-sharp" class="avatar-icon"></ion-icon>
-          </ion-avatar>
-          <ion-label>Escolher Foto:</ion-label>
-          <ion-button class="escolher" (click)="selecionarFoto()">Escolher</ion-button>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
-
-    <!-- Botão Entrar -->
-    <div class="ion-text-center">
-      <ion-button (click)="entrar()">entrar</ion-button>
-    </div>
-  </div>
 </ion-content>
