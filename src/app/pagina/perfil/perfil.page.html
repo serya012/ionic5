@@ -1,5 +1,3 @@
-<!-- src/app/pagina/perfil/perfil.page.html -->
-
 <ion-header [translucent]="true">
   <ion-toolbar color="roxo">
     <ion-buttons slot="start">
@@ -14,11 +12,12 @@
   <!-- Seção de Foto de Perfil -->
   <ion-item>
     <ion-avatar slot="start">
-      <img [src]="fotoPerfil || 'assets/img/default-profile-pic.jpg'">
+      <img src="{{ fotoPerfil }}">
     </ion-avatar>
+    
     <ion-label>
       <h2>Foto de Perfil</h2>
-      <!-- REMOVIDO: <p (click)="changeProfilePicture()">Trocar Foto</p> -->
+      <p (click)="changeProfilePicture()">Trocar Foto</p>
     </ion-label>
   </ion-item>
 
@@ -26,14 +25,14 @@
   <ion-item>
     <ion-label>Email:</ion-label>
     <ion-input [(ngModel)]="userEmail"></ion-input>
-    <ion-button size="small" (click)="changeEmail()">Trocar Email</ion-button>
+    <ion-button expand="full" (click)="changeEmail()">Trocar Email</ion-button>
   </ion-item>
 
   <!-- Seção de Senha -->
   <ion-item>
     <ion-label>Senha:</ion-label>
     <ion-input type="password" [(ngModel)]="userPassword"></ion-input>
-    <ion-button size="small" (click)="changePassword()">Trocar Senha</ion-button>
+    <ion-button expand="full" (click)="changePassword()">Trocar Senha</ion-button>
   </ion-item>
 
   <!-- Opção "Esqueci a Senha" -->
