@@ -11,3 +11,10 @@ ion-item {
     
     cursor:  pointer;
 }
+
+ion-toolbar {
+    --background: var(--ion-color-roxo);
+    /* roxo */
+    color:#ffffff;
+    /* branco */
+  }

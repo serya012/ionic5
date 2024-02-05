@@ -20,3 +20,9 @@ ion-content {
     flex-direction: column;
   }
   
+  ion-toolbar {
+    --background: var(--ion-color-roxo);
+    /* roxo */
+    color:#ffffff;
+    /* branco */
+  }
