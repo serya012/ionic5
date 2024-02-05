@@ -1,8 +1,33 @@
 /* orcamentod.page.scss */
 
+ion-toolbar {
+  --background: var(--ion-color-roxo);
+  /* roxo */
+  color:#ffffff;
+  /* branco */
+}
+
 .opcoes-button,
 .opcoes-list {
   margin: 2em;
   display: block;
 }
-    
+
+ion-button{
+  --background: var(--ion-color-roxo);
+}
+
+
+ion-button.salvarItens{
+  --background: var(--ion-color-roxo);
+  float: right;
+  margin-bottom: 20px;
+}
+
+ion-list{
+  --backgound-color: var(--ion-color-roxo);
+}
+
+ion-checkbox{
+  --color: var(--ion-color-roxo);
+}
