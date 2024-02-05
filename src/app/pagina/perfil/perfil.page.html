@@ -1,78 +1,4 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title class="ion-text-center">Perfil</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <div class="ion-padding">
-    <!-- Seção de Informações Pessoais -->
-    <ion-card>
-      <ion-card-header>
-        Informações Pessoais
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item>
-          <ion-label>Nome:</ion-label>
-          <ion-input placeholder="Digite seu nome completo"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>CPF:</ion-label>
-          <ion-input placeholder="Digite seu CPF" maxlength="14" type="tel"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>Email:</ion-label>
-          <ion-input type="email" placeholder="Digite seu email"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>Senha:</ion-label>
-          <ion-input type="password" placeholder="Digite sua senha"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>Nível:</ion-label>
-          <ion-input placeholder="Digite seu nível"></ion-input>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
-
-    <!-- Seção de Foto de Perfil -->
-    <!-- Seção de Foto de Perfil -->
-<ion-card>
-  <ion-card-header>
-    Foto de Perfil
-  </ion-card-header>
-  <ion-card-content>
-    <ion-item>
-      <ion-avatar>
-        <ion-icon name="person-sharp" class="avatar-icon"></ion-icon>
-      </ion-avatar>
-      <ion-label>Escolher Foto:</ion-label>
-      <ion-button (click)="selecionarFoto()">Escolher</ion-button>
-    </ion-item>
-  </ion-card-content>
-</ion-card>
-
-
-    <!-- Botão Entrar -->
-    <ion-button expand="full" (click)="entrar()">Entrar</ion-button>
-  </div>
-</ion-content>
-
-
-
-
-
-<!--
-  escondendo a parte do GC
-  
-  <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -83,57 +9,56 @@
 
 <ion-content [fullscreen]="true">
   <div class="ion-padding">
-     Seção de Informações Pessoais 
-    <ion-card>
+    <!-- Seção de Informações Pessoais -->
+    <ion-card color="light">
       <ion-card-header>
-        Informações Pessoais
+        <ion-title class="ion-text-dark">Informações Pessoais</ion-title>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
-          <ion-label>Nome:</ion-label>
+          <ion-label class="ion-text-dark">Nome:</ion-label>
           <ion-input placeholder="Digite seu nome completo"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label>CPF:</ion-label>
+          <ion-label class="ion-text-dark">CPF:</ion-label>
           <ion-input placeholder="Digite seu CPF" maxlength="14" type="tel"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label>Email:</ion-label>
+          <ion-label class="ion-text-dark">Email:</ion-label>
           <ion-input type="email" placeholder="Digite seu email"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label>Senha:</ion-label>
+          <ion-label class="ion-text-dark">Senha:</ion-label>
           <ion-input type="password" placeholder="Digite sua senha"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label>Nível:</ion-label>
+          <ion-label class="ion-text-dark">Nível:</ion-label>
           <ion-input placeholder="Digite seu nível"></ion-input>
         </ion-item>
       </ion-card-content>
     </ion-card>
 
-     Seção de Foto de Perfil 
-    <ion-card>
+    <!-- Seção de Foto de Perfil -->
+    <ion-card color="light">
       <ion-card-header>
-        Foto de Perfil
+        <ion-title class="ion-text-dark">Foto de Perfil</ion-title>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
-          <ion-label>Escolher Foto:</ion-label>
-          <ion-button (click)="selecionarFoto()">Escolher</ion-button>
+          <ion-avatar>
+            <ion-icon name="person-sharp" class="avatar-icon"></ion-icon>
+          </ion-avatar>
+          <ion-label class="ion-text-dark">Escolher Foto:</ion-label>
+          <ion-button color="secondary" (click)="selecionarFoto()">Escolher</ion-button>
         </ion-item>
-
-        Exibição da Foto de Perfil (pode ser uma imagem ou um ícone) 
-        <ion-img [src]="fotoPerfil"></ion-img>
       </ion-card-content>
     </ion-card>
 
-     Botão Entrar 
-    <ion-button expand="full" color="primary" (click)="entrar()">Entrar</ion-button>
+    <!-- Botão Entrar -->
+    <ion-button expand="full" color="success" (click)="entrar()">Entrar</ion-button>
   </div>
 </ion-content>
--->
