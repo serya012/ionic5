@@ -11,16 +11,15 @@ ion-content {
 
 .custom-icon {
   position: absolute;
+  background: #9000ff; /* Altere a cor aqui */
   bottom: 16px;
-  /* Ajuste conforme necessário para a distância do fundo */
   right: 16px;
-  /* Ajuste conforme necessário para a distância da direita */
-  font-size: 32px;
-  /* Tamanho médio, ajuste conforme necessário */
+  font-size: 64px;
   cursor: pointer;
+  border-radius: 50%;
 }
 
-/* /src/app/pagina/welcome/welcome.page.css */
+
 
 ion-menu {
   --ion-menu-max-edge-start: 100px;
