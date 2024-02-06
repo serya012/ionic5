@@ -19,6 +19,7 @@ export class AppComponent implements AfterViewInit {
     { title: 'Login', url: 'login', icon: 'log-in' },
     { title: 'Perfil', url: 'perfil', icon: 'person' },
     { title: 'Configuracao', url: 'configuracao', icon: 'settings' },
+    { title: 'Privacidade', url: 'privacidade', icon: 'share' },
   ];
 
   private startX: number = 0;
