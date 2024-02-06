@@ -21,6 +21,6 @@ export class PrivacidadePage {
     // Lógica para lidar com a não autorização
     console.log('Usuário não autorizou');
     // Substitua '/' pela página inicial ou de saída do seu app
-    this.navCtrl.navigateRoot('/');
+    this.navCtrl.navigateRoot('/welcome');
   }
 }
