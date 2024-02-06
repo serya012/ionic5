@@ -2,14 +2,13 @@
 
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 
 @Component({
   selector: 'app-perfil',
   templateUrl: 'perfil.page.html',
   styleUrls: ['perfil.page.scss'],
-  providers: [Camera], // Adicione o provedor para a classe Camera aqui
+  providers: [], // Adicione o provedor para a classe Camera aqui
 })
 export class PerfilPage {
   fotoPerfil: string = '';
@@ -18,7 +17,7 @@ export class PerfilPage {
 
   constructor(
     private modalController: ModalController,
-    private camera: Camera
+    
   ) {}
 
   changeEmail() {
