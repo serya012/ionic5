@@ -67,11 +67,11 @@ ion-menu.md ion-item ion-icon {
 
 ion-menu.md ion-item:hover ion-icon,
 ion-menu.md ion-item.selected ion-icon {
-  color: #fff; /* Cor do ícone no hover e no item selecionado */
+  color: rgb(255, 255, 255); /* Cor do ícone no hover e no item selecionado */
 }
 
 ion-menu.md ion-item ion-label {
-  color: #fff; /* Cor do texto */
+  color: #9000ff; /* Cor do texto */
   font-weight: 500;
 }
 
