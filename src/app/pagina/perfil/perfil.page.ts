@@ -17,8 +17,8 @@ export class PerfilPage {
 
   constructor(
     private modalController: ModalController,
-    
-  ) {}
+
+  ) { }
 
   changeEmail() {
     // Implemente a lógica para trocar o e-mail aqui
@@ -28,8 +28,8 @@ export class PerfilPage {
     // Implemente a lógica para trocar a senha aqui
   }
 
- 
-    
+
+
   // Adicione a função changeProfilePicture
- 
+
 }
