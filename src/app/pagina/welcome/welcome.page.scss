@@ -1,42 +1,71 @@
 /* /src/app/pagina/welcome/welcome.page.scss */
 
 .welcome {
-    width: 75%;
+    width: 100%;
     height: auto;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 ion-content {
     font-size: 18px;
+    background-color: #252525;
+    /* Fundo escuro */
+    color: #FFFFFF;
+    /* Cor do texto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
 ion-card-content {
-    font-size: 8px;
+    font-size: 7px;
     font-weight: bold;
+    color: #757575;
+    /* Cor do texto no card */
 }
 
 h3 {
     font-size: 3em;
-    color: #ffffff;
+    color: #FFFFFF;
+    /* Cor do título */
+    padding-top: 10px;
 }
 
 p {
-    font-size: 10px;
-    color: #333;
+    font-size: 16px;
+    color: #757575;
+    /* Cor do texto padrão */
+    margin-bottom: 15px;
 }
 
-.custom-title {
-    color: #9000ff; // Cor específica para a palavra "Minha Festa"
-}
-
-.white-text {
-    color: #ffffff;
-    /* ou qualquer cor desejada para o texto branco */
-}
 
 .purple-text {
-    color: #9000ff;
-    /* ou qualquer cor desejada para o texto roxo */
+    color: #9000FF;
+    font-weight: bold;
+    /* Roxo */
+}
+
+.ion-text-center {
+    text-align: center;
+}
+
+ion-button {
+    margin-top: 20px;
+    --background: #9000FF;
+    /* Roxo */
+    --color: #FFFFFF;
+    /* Branco */
+    font-weight: bold;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+ion-button:hover {
+    --background: #58008f;
+    /* Roxo mais escuro ao passar o mouse */
 }
