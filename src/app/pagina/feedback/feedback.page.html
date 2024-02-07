@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title  class="ion-text-center" color="roxo">Avaliação</ion-title>
+    <ion-title class="ion-text-center" color="roxo">Avaliação</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -31,6 +31,20 @@
           </div>
         </ion-item>
 
+        <!-- Selecionar salão -->
+        <ion-item>
+          <ion-label>Selecione o salão:</ion-label>
+          <ion-select [(ngModel)]="saloesSelecionados">
+            <ion-select-option value="Salão 1">Senac Nova Iguaçu1</ion-select-option>
+            <ion-select-option value="Salão 2">Senac Nova Iguaçu2</ion-select-option>
+            <ion-select-option value="Salão 3">Senac Nova Iguaçu3</ion-select-option>
+            <ion-select-option value="Salão 4">Senac Nova Iguaçu4</ion-select-option>
+            <ion-select-option value="Salão 5">Senac Nova Iguaçu5</ion-select-option>
+            <ion-select-option value="Salão 6">Senac Nova Iguaçu6</ion-select-option>
+            <!-- Adicione mais opções conforme necessário -->
+          </ion-select>
+        </ion-item>
+
         <ion-item>
           <ion-label>Comentários:</ion-label>
           <ion-textarea [(ngModel)]="comentarios" placeholder="Deixe seus comentários aqui"></ion-textarea>
@@ -40,7 +54,4 @@
       </ion-card-content>
     </ion-card>
   </div>
-</ion-content>
-<ion-content class="ion-padding">
-
 </ion-content>

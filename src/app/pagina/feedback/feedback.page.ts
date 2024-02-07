@@ -10,6 +10,7 @@ export class FeedbackPage {
   avaliacao: number = 0;
   stars: number[] = [1, 2, 3, 4, 5];
   comentarios: string = '';
+  saloesSelecionados: string[] = []; // Array para armazenar os salões selecionados
 
   constructor(
     private alertController: AlertController,
@@ -21,11 +22,11 @@ export class FeedbackPage {
   }
 
   async enviarFeedback() {
-    if (this.avaliacao === 0 || this.comentarios.trim() === '') {
-      // Se a avaliação ou os comentários não foram fornecidos, exibir um alerta
+    if (this.avaliacao === 0 || this.comentarios.trim() === '' || this.saloesSelecionados.length === 0) {
+      // Se a avaliação, os comentários ou os salões selecionados não foram fornecidos, exibir um alerta
       const alert = await this.alertController.create({
         header: 'Erro',
-        message: 'Por favor, forneça uma avaliação e comentários.',
+        message: 'Por favor, forneça uma avaliação, comentários e selecione pelo menos um salão.',
         buttons: ['OK'],
       });
 
@@ -58,6 +59,8 @@ export class FeedbackPage {
         // Escondendo o loading
         await loading.dismiss();
       }
+
+      console.log('Salões selecionados:', this.saloesSelecionados); // Imprime os salões selecionados no console
     }
   }
 
@@ -67,7 +70,7 @@ export class FeedbackPage {
       setTimeout(() => {
         // Substitua este bloco com a lógica de envio real
         console.log('Avaliação enviada:', this.avaliacao);
-        console.log(this.comentarios);
+        console.log('Comentários:', this.comentarios);
         resolve();
       }, 2000); // Simula o envio por 2 segundos
     });
