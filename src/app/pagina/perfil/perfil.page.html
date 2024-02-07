@@ -7,37 +7,75 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content [fullscreen]="true">
+  <div class="ion-padding">
+    <!-- Seção de Informações Pessoais -->
+    <ion-card color="">
+      <ion-card-header>
+        <ion-title>Informações Pessoais</ion-title>
+      </ion-card-header>
+      <ion-card-content>
 
-  <!-- Seção de Foto de Perfil -->
-  <ion-item>
-    <ion-avatar slot="start">
-      <img src="{{ fotoPerfil }}">
-    </ion-avatar>
-    
-    <ion-label>
-      <h2>Foto de Perfil</h2>
-      <p (click)="changeProfilePicture()">Trocar Foto</p>
-    </ion-label>
-  </ion-item>
+        <ion-item *ngIf="!editing">
+          <ion-label class="ion-text-dark">Nome:</ion-label>
+          <ion-text>{{ perfil.nome }}</ion-text>
+        </ion-item>
+        <ion-item *ngIf="editing">
+          <ion-label class="ion-text-dark">Nome:</ion-label>
+          <ion-input type="text" [(ngModel)]="perfil.nome"></ion-input>
+        </ion-item>
 
-  <!-- Seção de Email -->
-  <ion-item>
-    <ion-label>Email:</ion-label>
-    <ion-input [(ngModel)]="userEmail"></ion-input>
-    <ion-button expand="full" (click)="changeEmail()">Trocar Email</ion-button>
-  </ion-item>
+        <ion-item *ngIf="!editing">
+          <ion-label class="ion-text-dark">Email:</ion-label>
+          <ion-text>{{ perfil.email }}</ion-text>
+        </ion-item>
+        <ion-item *ngIf="editing">
+          <ion-label class="ion-text-dark">Email:</ion-label>
+          <ion-input type="email" [(ngModel)]="perfil.email"></ion-input>
+        </ion-item>
 
-  <!-- Seção de Senha -->
-  <ion-item>
-    <ion-label>Senha:</ion-label>
-    <ion-input type="password" [(ngModel)]="userPassword"></ion-input>
-    <ion-button expand="full" (click)="changePassword()">Trocar Senha</ion-button>
-  </ion-item>
+        <ion-item *ngIf="!editing">
+          <ion-label class="ion-text-dark">Telefone:</ion-label>
+          <ion-text>{{ perfil.telefone }}</ion-text>
+        </ion-item>
+        <ion-item *ngIf="editing">
+          <ion-label class="ion-text-dark">Telefone:</ion-label>
+          <ion-input type="tel" [(ngModel)]="perfil.telefone"></ion-input>
+        </ion-item>
 
-  <!-- Opção "Esqueci a Senha" -->
-  <ion-item (click)="forgotPassword()">
-    <ion-label>Esqueci a Senha</ion-label>
-  </ion-item>
+        <ion-item *ngIf="!editing">
+          <ion-label class="ion-text-dark">Data de Nascimento:</ion-label>
+          <ion-text>{{ perfil.dataNascimento }}</ion-text>
+        </ion-item>
+        <ion-item *ngIf="editing">
+          <ion-label class="ion-text-dark">Data de Nascimento:</ion-label>
+          <ion-input type="date" [(ngModel)]="perfil.dataNascimento"></ion-input>
+        </ion-item>
 
+        <ion-item *ngIf="!editing">
+          <ion-label class="ion-text-dark">Endereço:</ion-label>
+          <ion-text>{{ perfil.endereco }}</ion-text>
+        </ion-item>
+        <ion-item *ngIf="editing">
+          <ion-label class="ion-text-dark">Endereço:</ion-label>
+          <ion-input type="text" [(ngModel)]="perfil.endereco"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!editing">
+          <ion-label class="ion-text-dark">Descrição:</ion-label>
+          <ion-text>{{ perfil.descricao }}</ion-text>
+        </ion-item>
+        <ion-item *ngIf="editing">
+          <ion-label class="ion-text-dark">Descrição:</ion-label>
+          <ion-textarea [(ngModel)]="perfil.descricao"></ion-textarea>
+        </ion-item>
+
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Botão Editar Perfil -->
+    <div class="ion-text-center">
+      <ion-button (click)="toggleEditing()">{{ editing ? 'Salvar' : 'Editar' }}</ion-button>
+    </div>
+  </div>
 </ion-content>

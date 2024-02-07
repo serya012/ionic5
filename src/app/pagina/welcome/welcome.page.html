@@ -5,17 +5,17 @@
   <ion-card [ngClass]="welcomeMessage.titleClass">
     <ion-card-content class="ion-text-center">
       <h3>
-        <span class="white-text">Seja bem-vindo a </span>
+        <span class="white-text">Bem-vindo a </span>
         <span class="purple-text">Minha Festa</span>
         <span class="white-text">, ou melhor, a sua Festa 😉</span>
       </h3>
       <h3 [ngClass]="welcomeMessage.titleClass">{{ welcomeMessage.title }}</h3>
       <p [ngClass]="welcomeMessage.descriptionClass">{{ welcomeMessage.description }}</p>
-      <h3 [ngClass]="welcomeMessage.titleClass">{{ welcomeMessage.title2 }}</h3>
-      <p [ngClass]="welcomeMessage.descriptionClass">{{ welcomeMessage.description2 }}</p>
     </ion-card-content>
   </ion-card>
-  
 
-  <ion-button expand="full" (click)="Avancar()">Avançar</ion-button>
+
+  <p class="ion-text-center">Mensagens restantes: {{ remainingMessages }}</p>
+
+  <ion-button expand="block" (click)="Avancar()">Avançar</ion-button>
 </ion-content>

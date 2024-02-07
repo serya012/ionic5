@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="roxo">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Política de Privacidade</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content ion-text>
+      <p style="font-size: 18px;">Bem-vindo à Política de Privacidade do aplicativo "Minha Festa". Sua privacidade é importante para nós. Informamos que coletamos informações pessoais fornecidas por você, como nome, e-mail, e número de telefone, apenas quando você as fornece voluntariamente. Essas informações são utilizadas para melhorar nossos serviços, enviar atualizações e personalizar a experiência do usuário.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content ion-text>
+      <p style="font-size: 18px;">Por favor, selecione uma das opções abaixo para indicar se você autoriza ou não autoriza o uso das suas informações conforme descrito nesta Política de Privacidade:</p>
+    </ion-card-content>
+    <ion-card-content>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="full" shape="round" color="success" (click)="autorizar()">
+            Autorizo
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="full" shape="round" color="danger" (click)="naoAutorizar()">
+            Não Autorizo
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Link para o cadastro do administrador -->
+  <ion-card>
+    <ion-card-content>
+      <p style="font-size: 16px; opacity: 0.5;">Somente para os Adm, <a href="cadastro" style="text-decoration: none; color: inherit;">admin click</a>.</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

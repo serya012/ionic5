@@ -84,7 +84,19 @@ const routes: Routes = [
   {
     path: 'addevento',
     loadChildren: () => import('../crud/addevento/addevento.module').then( m => m.AddeventoPageModule)
+  },  {
+    path: 'privacidade',
+    loadChildren: () => import('./pagina/privacidade/privacidade.module').then( m => m.PrivacidadePageModule)
   },
+  {
+    path: 'loginusuario',
+    loadChildren: () => import('./pagina/loginusuario/loginusuario.module').then( m => m.LoginusuarioPageModule)
+  },
+  {
+    path: 'cadastroadm',
+    loadChildren: () => import('./pagina/cadastroadm/cadastroadm.module').then( m => m.CadastroadmPageModule)
+  },
+
 
 
 

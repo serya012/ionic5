@@ -61,7 +61,16 @@ ion-toolbar {
   }
   
   .ion-text-center {
-    display: flez;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+  
+  }
+  
+  .ion-text-dark {
+    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;

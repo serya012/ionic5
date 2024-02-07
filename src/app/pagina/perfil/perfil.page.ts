@@ -1,36 +1,28 @@
-// src/app/pagina/perfil/perfil.page.ts
-
 import { Component } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-
 
 @Component({
   selector: 'app-perfil',
   templateUrl: 'perfil.page.html',
   styleUrls: ['perfil.page.scss'],
-  providers: [Camera], // Adicione o provedor para a classe Camera aqui
 })
 export class PerfilPage {
-  fotoPerfil: string = '';
-  userEmail: string = '';
-  userPassword: string = '';
+  perfil: any;
+  editing: boolean = false;
 
-  constructor(
-    private modalController: ModalController,
-    private camera: Camera
-  ) {}
-
-  changeEmail() {
-    // Implemente a lógica para trocar o e-mail aqui
+  constructor() {
+    // Simulando um perfil de usuário com algumas informações
+    this.perfil = {
+      nome: 'João da Silva',
+      email: 'joao@example.com',
+      telefone: '123456789',
+      dataNascimento: '01/01/1990',
+      endereco: 'Rua ABC, 123',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac consectetur elit.'
+      // Outras informações do perfil podem ser adicionadas aqui
+    };
   }
 
-  changePassword() {
-    // Implemente a lógica para trocar a senha aqui
+  toggleEditing() {
+    this.editing = !this.editing;
   }
-
- 
-    
-  // Adicione a função changeProfilePicture
- 
 }

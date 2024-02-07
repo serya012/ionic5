@@ -1,4 +1,3 @@
-// /src/app/pagina/welcome/welcome.page.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
@@ -11,24 +10,41 @@ import { MenuController } from '@ionic/angular';
 export class WelcomePage {
   welcomeMessages: any[] = [
     {
-      title: 'Seja bem-vindo a Minha Festa, ou melhor, a sua Festa 😉',
-      description: 'O mais novo aplicativo inovador para você gerenciar e personalizar as suas festas com seus companheiros',
+      description: 'Aqui você pode criar e personalizar suas festas de maneira única!',
+      descriptionClass: 'custom-description',
+    },
+    {
+      title: 'Dicas para a sua festa perfeita',
+      description: 'Descubra sugestões e truques para tornar sua festa inesquecível.',
+      titleClass: 'other-title',
+      descriptionClass: 'other-description',
+    },
+    {
+      title: 'Decoração única',
+      description: 'Inspire-se em ideias de decoração para uma festa com a sua cara.',
       titleClass: 'custom-title',
       descriptionClass: 'custom-description',
     },
     {
-      title2: 'Outra mensagem de boas-vindas',
-      description2: 'Esta é outra mensagem interessante.',
+      title: 'Receitas incríveis',
+      description: 'Descubra receitas deliciosas para impressionar seus convidados.',
       titleClass: 'other-title',
       descriptionClass: 'other-description',
     },
-    // Adicione mais mensagens conforme necessário
+    {
+      title: 'Agradecemos por escolher o App Festa',
+      description: 'Esperamos que seu evento seja incrível! Divirta-se!',
+      titleClass: 'other-title',
+      descriptionClass: 'other-description',
+    },
   ];
+  
 
+  remainingMessages: number = this.welcomeMessages.length;
   currentMessageIndex: number = 0;
   welcomeMessage: any = this.welcomeMessages[this.currentMessageIndex];
 
-  constructor(private menuController: MenuController, private router: Router) { }
+  constructor(private menuController: MenuController, private router: Router) {}
 
   ionViewWillEnter() {
     this.menuController.enable(false);
@@ -38,10 +54,15 @@ export class WelcomePage {
     this.menuController.enable(true);
   }
 
+  generateRandomMessage() {
+    const randomIndex = Math.floor(Math.random() * this.welcomeMessages.length);
+    return this.welcomeMessages.splice(randomIndex, 1)[0];
+  }
+
   Avancar() {
-    if (this.currentMessageIndex < this.welcomeMessages.length - 1) {
-      this.currentMessageIndex++;
-      this.welcomeMessage = this.welcomeMessages[this.currentMessageIndex];
+    if (this.remainingMessages > 0) {
+      this.welcomeMessage = this.generateRandomMessage();
+      this.remainingMessages--;
     } else {
       this.router.navigate(['/home']);
     }

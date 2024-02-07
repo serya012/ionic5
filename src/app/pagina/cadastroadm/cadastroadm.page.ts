@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: 'login.page.html',
-  styleUrls: ['login.page.scss'],
+  selector: 'app-cadastroadm',
+  templateUrl: 'cadastroadm.page.html',
+  styleUrls: ['cadastroadm.page.scss'],
 })
-export class LoginPage {
+export class CadastroadmPage {
   fotoPerfil: string = ''; // Inicialize como uma string vazia
 
   constructor(private router: Router) {}
@@ -15,10 +15,9 @@ export class LoginPage {
     // Lógica para selecionar uma foto, pode ser usando uma biblioteca ou nativo do Ionic/Cordova
     // Atualize a propriedade 'fotoPerfil' com o caminho da foto selecionada
   }
-
   entrar() {
     // Lógica de entrar na conta
-    // Por exemplo, redirecionar para a página de loginusuario
-    this.router.navigate(['/loginusuario']); // Redirecionar para a página de loginusuario
+    // Por exemplo, redirecionar para a página de login
+    this.router.navigate(['/loginusuario']); // Redirecionar para a página de login
   }
 }

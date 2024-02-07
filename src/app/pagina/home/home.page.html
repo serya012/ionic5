@@ -1,4 +1,3 @@
-<!-- home.page.html -->
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -17,21 +16,30 @@
   <ion-content [fullscreen]="true">
     <ion-card>
       <ion-card-header>
-        Sugestões de Compra
+        Ir para orçamento
       </ion-card-header>
       <ion-card-content>
-        <ion-button expand="block" routerLink="/orcamentod">Montar Orçamento</ion-button>
+        <ion-button expand="block" routerLink="/orcamento">Monte seu orçamento</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card> <ion-card-header>
+        Ver orçamentos </ion-card-header>
+      <ion-card-content>
+        <ion-button expand="block" routerLink="/orcamentod">Veja seu Orçamento</ion-button>
       </ion-card-content>
     </ion-card>
 
     <ion-card>
-      <ion-card-header>
-        cadastro
-      </ion-card-header>
       <ion-card-content>
-        <ion-button expand="block" routerLink="/perfil">cadastro</ion-button>
+        <ion-button expand="block" routerLink="/cadastro">Crie uma conta grátis</ion-button>
       </ion-card-content>
     </ion-card>
 
-    <!-- Adicione mais cartões conforme necessário para outras funcionalidades -->
+    <ion-card>
+      <ion-card-content>
+        <ion-button expand="block" routerLink="/login">Login</ion-button>
+      </ion-card-content>
+    </ion-card>
   </ion-content>
+</ion-content>
