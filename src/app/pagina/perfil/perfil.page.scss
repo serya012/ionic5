@@ -41,16 +41,16 @@ ion-icon {
 /* Estilo padrão do ion-button */
 ion-button {
   --background: var(--ion-color-roxo);
-  --border-radius: 16em;
+  --border-radius: 20px;
   border-radius: 8px;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  --display: flex;
+  --align-items: center;
+  --justify-content: center;
   width: 50%;
   height: 50px;
   margin-top: 20px;
-  font-size: 13px;
+  font-size: 20px;
 }
 
 /* Estilo para a classe .escolher */
