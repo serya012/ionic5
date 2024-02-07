@@ -2,7 +2,7 @@
 ion-toolbar {
   --background: var(--ion-color-roxo);
   /* roxo */
-  color:#ffffff;
+  color: #ffffff;
   /* branco */
 }
 
@@ -17,41 +17,52 @@ ion-iten {
 }
 
 .star-rating ion-icon {
-  font-size: 1.9em; /* Ajuste o tamanho conforme necessário */
-  color: #757575; /* Cor padrão das estrelas */
+  font-size: 1.9em;
+  /* Ajuste o tamanho conforme necessário */
+  color: #757575;
+  /* Cor padrão das estrelas */
 }
 
 .star-rating ion-icon.active {
-  color: #9000ff; /* Cor das estrelas ativas, ajuste conforme necessário */
+  color: #9000ff;
+  /* Cor das estrelas ativas, ajuste conforme necessário */
 }
+
 ion-content {
   position: relative;
 }
 
 .custom-icon {
   position: absolute;
-  bottom: 16px; /* Ajuste conforme necessário para a distância do fundo */
-  right: 16px; /* Ajuste conforme necessário para a distância da direita */
-  font-size: 54px; /* Tamanho médio, ajuste conforme necessário */
+  bottom: 16px;
+  /* Ajuste conforme necessário para a distância do fundo */
+  right: 16px;
+  /* Ajuste conforme necessário para a distância da direita */
+  font-size: 54px;
+  /* Tamanho médio, ajuste conforme necessário */
   cursor: pointer;
 }
 
 ion-button {
   --background: var(--ion-color-roxo);
-  --border-radius: 16em;
-  border-radius: 8px;
+  --border-radius: 80px;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  --display: flex;
+  --align-items: center;
+  --justify-content: center;
   width: 50%;
   height: 50px;
-  margin-top: 20px;
+  margin: 20px auto;
+  /* Margem superior e inferior de 20px e margem horizontal automática */
   font-size: 13px;
 }
+
 
 ion-button.enviarFeedback {
   --background: var(--ion-color-success-tint);
   float: right;
   margin-bottom: 20px;
+  --display: flex;
+  --align-items: center;
+  --justify-content: center;
 }
