@@ -18,6 +18,6 @@ export class LoginusuarioPage {
   entrar() {
     // Lógica de entrar na conta
     // Por exemplo, redirecionar para a página de login
-    this.router.navigate(['/cadastroadm']); // Redirecionar para a página de login
+    this.router.navigate(['/evento']); // Redirecionar para a página de login
   }
 }
